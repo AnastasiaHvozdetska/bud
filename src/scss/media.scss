@@ -1,0 +1,13 @@
+@media only screen
+and (max-device-width: 1200px){
+  .menu-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .navigation .menu .menu-item:first-of-type {
+    grid-column-start: 1;
+  }
+  .navigation .menu .menu-item:nth-of-type(5) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+}
