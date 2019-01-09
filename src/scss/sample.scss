@@ -1,3 +1,6 @@
+$yellow: #FFCE00;
+$gray: rgba(0, 0, 0, 0.11);
+
 .container {
   min-width: 1200px;
   width: calc(100% - 80px);
@@ -8,4 +11,23 @@
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
+}
+
+.section-heading {
+  color: $gray;
+  text-transform: uppercase;
+  font-size: 3.5em;
+  font-family: "MontserratBlack";
+}
+
+.section-subheading {
+  text-transform: uppercase;
+  font-family: "MontserratBlack";
+  font-size: 1.5em;
+  position: relative;
+  bottom: 20px;
+  span {
+    font-size: inherit;
+    color: $yellow;
+  }
 }

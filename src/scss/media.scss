@@ -1,13 +1,23 @@
-@media only screen
-and (max-device-width: 1200px){
-  .menu-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .navigation .menu .menu-item:first-of-type {
-    grid-column-start: 1;
-  }
-  .navigation .menu .menu-item:nth-of-type(5) {
-    grid-column-start: 5;
-    grid-column-end: 7;
-  }
+/* ----------- Non-Retina Screens(Laptops) ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .menu-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .navigation .menu .menu-item:first-of-type {
+      grid-column-start: 1;
+    }
+    .navigation .menu .menu-item:nth-of-type(5) {
+      grid-column-start: 5;
+      grid-column-end: 7;
+    }
+    .navigation .menu .menu-item:nth-of-type(4) {
+      grid-column-start: 4;
+    }
+    .navigation .menu {
+      grid-template-columns: repeat(8,1fr);
+      grid-template-rows: 1fr;
+    }
 }

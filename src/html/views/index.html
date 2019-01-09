@@ -7,7 +7,162 @@
 <%= _.template(require('./../includes/header.html'))(data) %>
 
 <main>
-    <div class="container">MAIN</div>
+    <div class="container">
+      <section class="about-company">
+        <div class="about-left">
+          <h2 class="section-heading">Про компанію</h2>
+          <h5 class="section-subheading"><span>Високі</span> стандарти будівництва</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+          <ol class="about-links">
+            <li class="about-links-item">
+              <a href="#">
+                <span>01</span>
+                Історія
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>02</span>
+                Команда
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>03</span>
+                Переваги
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>04</span>
+                Досягнення
+              </a>
+            </li>
+          </ol>
+        </div>
+        <div class="about-right">
+          <ol class="about-achievements-list">
+            <li class="achievements-item">
+              <span>3456+</span>
+              Збудовано м2
+            </li>
+            <li class="achievements-item">
+              <span>245+</span>
+              Щасливих власників квартир
+            </li>
+            <li class="achievements-item">
+              <span>23+</span>
+              Запланованих проекти
+            </li>
+            <li class="achievements-item">
+              <span>10+</span>
+              Років на ринку
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="our-projects">
+        <h2 class="section-heading">Для комфортного життя</h2>
+        <h5 class="section-subheading">Наші <span>проекти</span></h5>
+
+        <div class="project">
+          <img class="project-img" src="../img/project-1.jpg" alt="">
+          <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+            <h3>Millenium</h3>
+            <h6>Житловий комплекс</h6>
+            <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+            <p class="project-address" itemprop="streetAddress">
+              <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+            </p>
+            <div class="phone-wrapper">
+              <i class="icon icon-phone">&#xe800;</i>
+              <ol class="phone-list">
+                <li class="list-item">
+                  <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+                </li>
+                <li class="list-item">
+                  <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <img class="project-img" src="../img/project-1.jpg" alt="">
+          <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+            <h3>Фортеця</h3>
+            <h6>Житловий комплекс</h6>
+            <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+            <p class="project-address" itemprop="streetAddress">
+              <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+            </p>
+            <div class="phone-wrapper">
+              <i class="icon icon-phone">&#xe800;</i>
+              <ol class="phone-list">
+                <li class="list-item">
+                  <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+                </li>
+                <li class="list-item">
+                  <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="last-news">
+        <h2 class="section-heading">Найцікавіше з нашої роботи</h2>
+        <h5 class="section-subheading">Останні <span>новини</span></h5>
+        <ol class="news-list">
+          <li class="list-item" itemscope itemtype="http://schema.org/Article">
+            <div class="news-bg" style="background-image: url('../img/news-1.jpg')">
+              <!-- <img src="../img/news-1.jpg" alt=""> -->
+            </div>
+            <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
+            <span class="news-date" itemprop="datePublished">24 січня 2019</span>
+            <p class="news-text" itemprop="mainEntityOfPage">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a class="news-link" href="#"></a>
+          </li>
+          <li class="list-item">
+            <div class="news-bg" style="background-image: url('../img/news-2.jpg')">
+              <!-- <img src="../img/news-1.jpg" alt=""> -->
+            </div>
+            <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
+            <span class="news-date" itemprop="datePublished">24 січня 2019</span>
+            <p class="news-text" itemprop="mainEntityOfPage">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a class="news-link" href="#"></a>
+          </li>
+          <li class="list-item">
+            <div class="news-bg" style="background-image: url('../img/news-3.jpg')">
+              <!-- <img src="../img/news-1.jpg" alt=""> -->
+            </div>
+            <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
+            <span class="news-date" itemprop="datePublished">24 січня 2019</span>
+            <p class="news-text" itemprop="mainEntityOfPage">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a class="news-link" href="#"></a>
+          </li>
+        </ol>
+      </section>
+
+      <section class="partners">
+        <h5 class="section-subheading">Наші партнери</h5>
+      </section>
+    </div>
 </main>
 
 <%= _.template(require('./../includes/footer.html'))(data) %>
