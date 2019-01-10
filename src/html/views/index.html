@@ -7,7 +7,6 @@
 <%= _.template(require('./../includes/header.html'))(data) %>
 
 <main>
-    <div class="full-container">
       <section class="about-company">
 
         <div class="about-left">
@@ -131,15 +130,15 @@
             <h5 class="section-subheading">Останні <span>новини</span></h5>
             <div class="news-wrapper">
               <div class="list-item" itemscope itemtype="http://schema.org/Article">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 200 120">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
                     <defs>
-                        <pattern id="img1" patternUnits="userSpaceOnUse" width="600" height="450">
-                            <image xlink:href="../img/news-1.jpg" x="-100px" y="0"
-                                width="100%" height="100%" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
+                        <pattern id="img1" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                            <image xlink:href="../img/news-1.jpg" x="0" y="0"
+                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
                         </pattern>
                     </defs>
-                
+
                   <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
                   <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
                   <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img1)"/>
@@ -156,9 +155,21 @@
                 <a class="news-link" href="#"></a>
               </div>
               <div class="list-item">
-                <div class="news-bg" style="background-image: url('../img/news-2.jpg')">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
+                    <defs>
+                        <pattern id="img2" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                            <image xlink:href="../img/news-2.jpg" x="0" y="0"
+                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
+                        </pattern>
+                    </defs>
+
+                  <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
+                  <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
+                  <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img2)"/>
+                </svg>
+                <!-- <div class="news-bg" style="background-image: url('../img/news-2.jpg')"> -->
                   <!-- <img src="../img/news-1.jpg" alt=""> -->
-                </div>
+                <!-- </div> -->
                 <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
                 <span class="news-date" itemprop="datePublished">24 січня 2019</span>
                 <p class="news-text" itemprop="mainEntityOfPage">
@@ -167,9 +178,21 @@
                 <a class="news-link" href="#"></a>
               </div>
               <div class="list-item">
-                <div class="news-bg" style="background-image: url('../img/news-3.jpg')">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
+                    <defs>
+                        <pattern id="img3" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                            <image xlink:href="../img/news-3.jpg" x="0" y="0"
+                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
+                        </pattern>
+                    </defs>
+
+                  <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
+                  <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
+                  <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img3)"/>
+                </svg>
+                <!-- <div class="news-bg" style="background-image: url('../img/news-3.jpg')"> -->
                   <!-- <img src="../img/news-1.jpg" alt=""> -->
-                </div>
+                <!-- </div> -->
                 <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
                 <span class="news-date" itemprop="datePublished">24 січня 2019</span>
                 <p class="news-text" itemprop="mainEntityOfPage">
@@ -476,7 +499,7 @@
                         <p><span>сб-нд</span> Вихідний</p>
                     </li>
                   </ol>
-      
+
                   <p>Офіс</p>
                   <ol class="info-list">
                     <li class="info-list-item">
@@ -509,7 +532,6 @@
               </div>
             </div>
       </section>
-    </div>
 </main>
 
 <%= _.template(require('./../includes/footer.html'))(data) %>

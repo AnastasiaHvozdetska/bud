@@ -3,11 +3,8 @@
   and (min-device-width: 1200px)
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .menu-wrapper {
-      grid-template-columns: 1fr;
-    }
     .navigation {
-      grid-template-columns: 150px 1fr 150px;
+      border: 1px solid red;
     }
     .navigation .menu .menu-item:first-of-type {
       grid-column-start: 1;
@@ -23,19 +20,55 @@
       grid-template-columns: repeat(8,1fr);
       grid-template-rows: 1fr;
     }
-    header:after  {
-      border-width: 200px 0 0 1600px;
-    }
-    .about-company .about-left:before {
-      border-width: 510px 950px 0 0;
+    header{
+      &::before {
+        border-color: transparent transparent #ffffff;
+        border-width: 0 0 200px 400px;
+        right: 0;
+        z-index: 5;
+      }
+      &::after {
+        border-width: 230px 0 0 1520px;
+      }
     }
     .about-company {
       .about-left {
         grid-column-start: 1;
         grid-column-end: 10;
+        &::before {
+          border-width: 510px 1100px 0 0;
+        }
+        &::after {
+          border-width: 0 0 200px 350px;
+        }
       }
       .about-right {
         grid-column-start: 10;
+      }
+    }
+    .partners .partners-list {
+      grid-template-columns: repeat(9,1fr);
+      grid-gap: 30px;
+      .list-item:first-of-type {
+        grid-column: 3;
+      }
+    }
+    .footer-wrapper .footer-info {
+      padding-top: 20px;
+      a {
+        font-size: 12px;
+      }
+      .info-list {
+        grid-template-columns: repeat(11,1fr);
+        .info-list-item {
+          grid-column: span 3;
+          p {
+            font-size: 12px;
+          }
+          &:last-of-type {
+            grid-column: span 2;
+          }
+        }
       }
     }
 }
