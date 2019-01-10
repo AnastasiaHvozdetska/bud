@@ -1,9 +1,43 @@
     <footer>
-      <%=author%> <br>
-
-      FOOTER
+      <p>Comfart © Copyright 2019. All Rights Reserved.</p>
+      <p>Designed by BlueBird</p>
     </footer>
 
     <script src="js/bundle.js"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+    <script>
+        // var map = L.map('mapdiv').setView([48.918853, 24.702638], 17);
+
+        var map = L.map('mapdiv', {
+          center: [48.918853, 24.702638],
+          zoom: 17,
+          zoomControl: false,
+          attributionControl: false
+        });
+
+        console.log(map)
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var LeafIcon = L.Icon.extend({
+          options: {
+            // shadowUrl: './img/map-marker-solid.svg',
+            iconSize:     [38, 95],
+            shadowSize:   [50, 64],
+            iconAnchor:   [22, 94],
+            shadowAnchor: [4, 62],
+            popupAnchor:  [-3, -76]
+          }
+        });
+
+        var greenIcon = new LeafIcon({iconUrl: './img/map-marker-solid.svg'});
+
+        L.marker([48.918853, 24.702638], {icon: greenIcon}).bindPopup("I am a green leaf.").addTo(map);
+      </script>
   </body>
 </html>

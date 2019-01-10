@@ -6,6 +6,9 @@
     .menu-wrapper {
       grid-template-columns: 1fr;
     }
+    .navigation {
+      grid-template-columns: 150px 1fr 150px;
+    }
     .navigation .menu .menu-item:first-of-type {
       grid-column-start: 1;
     }
@@ -19,5 +22,20 @@
     .navigation .menu {
       grid-template-columns: repeat(8,1fr);
       grid-template-rows: 1fr;
+    }
+    header:after  {
+      border-width: 200px 0 0 1600px;
+    }
+    .about-company .about-left:before {
+      border-width: 510px 950px 0 0;
+    }
+    .about-company {
+      .about-left {
+        grid-column-start: 1;
+        grid-column-end: 10;
+      }
+      .about-right {
+        grid-column-start: 10;
+      }
     }
 }
