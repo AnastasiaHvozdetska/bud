@@ -51,6 +51,24 @@ a {
   color: white;
 }
 
+.navigation.fixed {
+  top: -100px;
+  transition: $transition;
+  z-index: 100;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.79);
+    z-index: -1;
+    left: -160px;
+    transition: $transition;
+    opacity: 1;
+  }
+}
+
 header {
   height: 95vh;
   background-image: linear-gradient(to bottom,rgba(0,0,0,0.8) 5%,rgba(25,30,62,0) 100%),url('../img/header-bg.jpg');
@@ -77,25 +95,27 @@ header {
     bottom: -10vh;
     right: 0;
     z-index: 5;
+    background-image: url('../img/news-3.jpg');
   }
   .header-slogan {
     text-transform: uppercase;
     color: #fff;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5,1fr);
     padding-top: 100px;
-    grid-template-rows: 1fr 50px 1fr;
+    grid-template-rows: 1fr 1fr 50px 1fr;
     h1 {
       font-family: MontserratBlack;
       font-size: 6.3em;
       grid-column-start: 3;
+      grid-row: span 2/4;
       line-height: 1em;
       text-align: right;
     }
     h4 {
       font-size: 1em;
       text-align: right;
-      grid-row-start: 2;
+      grid-row-start: 4;
       grid-column-start: 3;
       grid-column-end: 4;
     }
@@ -104,7 +124,7 @@ header {
       padding-right: 100px;
     }
     svg {
-      grid-row-start: 4;
+      grid-row-start: 5;
       width: 100%;
       grid-column-end: 6;
       grid-column-start: 1;
@@ -117,10 +137,27 @@ header {
   display: grid;
   grid-template-columns: 140px 1fr 140px;
   grid-column-start: 2;
-  .phones-wrapper {
+  align-items: flex-end;
+  transition: $transition;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 30px;
+  &::after {
+    content: '';
+    transition: $transition;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+  .phone-list {
     font-size: 12px;
-    display: flex;
-    align-items: flex-end;
+    padding-bottom: 5px;
+    .icon {
+      padding-right: 5px;
+    }
   }
   .menu {
     display: grid;
@@ -135,6 +172,26 @@ header {
       a {
         font-size: 12px;
         text-transform: uppercase;
+        transition: $transition;
+        position: relative;
+        &::after {
+          content: '';
+          display: block;
+          height: 1px;
+          width: 0%;
+          position: absolute;
+          background-color: $yellow;
+          left: 0;
+          bottom: 0;
+          transition: $transition;
+        }
+        &:hover {
+          color: $yellow;
+          &::after {
+            width: 100%;
+            transition: $transition;
+          }
+        }
       }
       &:first-of-type {
         grid-column: span 2/4;
@@ -146,6 +203,9 @@ header {
       &.logo {
         grid-column: span 3;
         padding-top: 20px;
+        a::after {
+          display: none;
+        }
         img {
           width: 120px;
         }
@@ -162,6 +222,12 @@ header {
       padding: 0 7px;
     }
   }
+  a:hover {
+    .icon {
+      color: $yellow;
+      transition: $transition;
+    }
+  }
 }
 
 .about-company {
@@ -172,6 +238,7 @@ header {
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 50px;
   height: 600px;
+  overflow: hidden;
   .about-left {
     grid-column-start: 1;
     grid-column-end: 9;
@@ -276,6 +343,7 @@ header {
     padding-top: 130px;
     grid-column-end: 12;
     grid-column-start: 9;
+    position: relative;
     .about-achievements-list {
       display: grid;
       grid-template-rows: repeat(4, 1fr);
@@ -302,6 +370,27 @@ header {
         }
       }
     }
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 120px;
+      background-color: #23221c;
+      position: absolute;
+      top: 69px;
+      left: -55px;
+      transform: rotate(159deg);
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #23221c;
+    position: absolute;
+    width: calc(100% + 200px);
+    transform: rotate(-167deg);
+    top: -23px;
   }
 }
 
@@ -330,8 +419,7 @@ header {
       padding-right: 10px;
     }
     .project-img {
-      grid-column-start: 1;
-      grid-column-end: 8;
+      grid-column: span 6;
     }
     .project-description {
       grid-column-start: 8;
@@ -396,7 +484,7 @@ header {
       }
       .project-description {
         grid-column-start: 1;
-        grid-column-end: 7;
+        grid-column-end: 6;
         a, p {
           display: flex;
           flex-direction: row-reverse;
@@ -420,6 +508,7 @@ header {
       .project-img {
         grid-column-start: 7;
         grid-column-end: 13;
+        transform: rotateY(180deg);
       }
     }
   }
@@ -440,10 +529,11 @@ header {
       content: '';
       display: block;
       position: absolute;
-      width: 100%;
-      height: 170px;
+      width: 100vw;
+      height: 300px;
       top: 0;
-      background: linear-gradient(to bottom, #FFFFFF00 35%, #0000001C);
+      left: -160px;
+      background: linear-gradient(0deg, rgba(239, 239, 237, 1) 0%, rgba(239, 239, 237, 0.1) 100%);
       z-index: -1;
     }
     .news-bg {
@@ -526,7 +616,7 @@ header {
   .partners-list {
     display: grid;
     grid-template-columns: repeat(5, 120px);
-    grid-gap: 200px;
+    grid-gap: 100px;
     justify-content: center;
     padding: 50px 0;
   }
@@ -588,12 +678,14 @@ header {
         width: 100vw;
         left: 0;
         top: 50%;
-        z-index: -1;
+        z-index: 0;
       }
       span {
         color: inherit;
         background-color: white;
         padding-right: 30px;
+        z-index: 5;
+        position: relative;
       }
     }
     .info-list {
@@ -626,6 +718,9 @@ header {
         grid-template-columns: 1fr;
         .info-list-item {
           justify-content: flex-start;
+          &:last-of-type {
+            flex-direction: row;
+          }
         }
       }
     }

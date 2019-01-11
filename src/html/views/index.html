@@ -46,19 +46,19 @@
         <div class="about-right">
           <ol class="about-achievements-list">
             <li class="achievements-item">
-              <span>3456+</span>
+              <span id="value">0</span>
               Збудовано м2
             </li>
             <li class="achievements-item">
-              <span>245+</span>
+              <span id="value2">0+</span>
               Щасливих власників квартир
             </li>
             <li class="achievements-item">
-              <span>23+</span>
+              <span id="value3">0+</span>
               Запланованих проекти
             </li>
             <li class="achievements-item">
-              <span>10+</span>
+              <span id="value4">0+</span>
               Років на ринку
             </li>
           </ol>
@@ -73,7 +73,17 @@
           <h5 class="section-subheading">Наші <span>проекти</span></h5>
 
           <div class="project">
-            <img class="project-img" src="../img/project-1.jpg" alt="">
+            <!-- <img class="project-img" src="../img/project-1.jpg" alt=""> -->
+            <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130" preserveAspectRatio="xMinYMax slice">
+              <defs>
+                  <pattern id="proj1" patternUnits="userSpaceOnUse" width="200" height="120" x="0" y="0">
+                      <image xlink:href="../img/project-1.png" x="0" y="0"
+                          width="100%" height="100%" preserveAspectRatio="xMinYMin slice"/>
+                  </pattern>
+              </defs>
+            <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)"/>
+          </svg>
+
             <div class="project-description" itemscope itemtype="http://schema.org/Organization">
               <h3><span>Millenium</span></h3>
               <h6>Житловий комплекс</h6>
@@ -98,7 +108,12 @@
           </div>
 
           <div class="project">
-            <img class="project-img" src="../img/project-1.jpg" alt="">
+              <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130" preserveAspectRatio="xMinYMax slice">
+                <defs>
+                </defs>
+              <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)"/>
+            </svg>
+
             <div class="project-description" itemscope itemtype="http://schema.org/Organization">
               <h3><span>Фортеця</span></h3>
               <h6>Житловий комплекс</h6>
@@ -131,16 +146,12 @@
             <div class="news-wrapper">
               <div class="list-item" itemscope itemtype="http://schema.org/Article">
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130" preserveAspectRatio="xMinYMax slice">
                     <defs>
-                        <pattern id="img1" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                        <pattern id="img1" patternUnits="userSpaceOnUse" x="0" y="0" width="180" height="120">
                             <image xlink:href="../img/news-1.jpg" x="0" y="0"
-                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
-                        </pattern>
+                              width="100%" height="100%" preserveAspectRatio="xMinYMin slice"/>
                     </defs>
-
-                  <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
-                  <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
                   <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img1)"/>
                 </svg>
 
@@ -155,21 +166,16 @@
                 <a class="news-link" href="#"></a>
               </div>
               <div class="list-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130" preserveAspectRatio="xMinYMax slice">
                     <defs>
-                        <pattern id="img2" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                        <pattern id="img2" patternUnits="userSpaceOnUse" x="0" y="0" width="180" height="120">
                             <image xlink:href="../img/news-2.jpg" x="0" y="0"
-                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
+                                width="100%" height="100%" preserveAspectRatio="xMinYMin slice"/>
                         </pattern>
                     </defs>
-
-                  <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
-                  <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
                   <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img2)"/>
                 </svg>
-                <!-- <div class="news-bg" style="background-image: url('../img/news-2.jpg')"> -->
-                  <!-- <img src="../img/news-1.jpg" alt=""> -->
-                <!-- </div> -->
+
                 <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
                 <span class="news-date" itemprop="datePublished">24 січня 2019</span>
                 <p class="news-text" itemprop="mainEntityOfPage">
@@ -178,21 +184,17 @@
                 <a class="news-link" href="#"></a>
               </div>
               <div class="list-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" enable-background="new 0 0 180 130" preserveAspectRatio="xMinYMax slice">
                     <defs>
-                        <pattern id="img3" patternUnits="userSpaceOnUse" width="100%" height="100%">
+                        <pattern id="img3" patternUnits="userSpaceOnUse" width="180" height="120" x="0" y="0">
                             <image xlink:href="../img/news-3.jpg" x="0" y="0"
-                                width="180px" height="120px" /><!-- Image from http://silviahartmann.com/background-tile/6-grass-meadow-tile.php-->
+                                width="100%" height="100%" preserveAspectRatio="xMinYMin slice"/>
                         </pattern>
                     </defs>
-
-                  <!-- <polygon points="50 0, 0 50, 0 0" fill="#f2f2f2" points="100 0, 0 100, 0 0"></polygon> -->
-                  <!-- <path fill="url('../img/news-1.jpg')" d="M200 120v-40.5l-60.3 40.5zM0 0v47.9l63.6-47.9z"/> -->
                   <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#img3)"/>
                 </svg>
-                <!-- <div class="news-bg" style="background-image: url('../img/news-3.jpg')"> -->
-                  <!-- <img src="../img/news-1.jpg" alt=""> -->
-                <!-- </div> -->
+
                 <h5 itemprop="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
                 <span class="news-date" itemprop="datePublished">24 січня 2019</span>
                 <p class="news-text" itemprop="mainEntityOfPage">
@@ -520,10 +522,6 @@
                     <li class="info-list-item">
                         <i class="icon icon-location">&#xe802;</i>
                         <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
-                    </li>
-                    <li class="info-list-item">
-                        <p><span>пн-пт</span> 9:00 - 18:00</p>
-                        <p><span>сб-нд</span> Вихідний</p>
                     </li>
                   </ol>
               </div>
