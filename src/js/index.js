@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', fixedMenu);
 
 // Fixed menu on scroll.
 function fixedMenu () {
-  let menu = document.querySelector('.navigation');
+  let menu = document.querySelector('header');
 
   if (window.pageYOffset > 100){
     menu.classList.add('fixed');
@@ -70,6 +70,46 @@ if (visibleBlock) {
   console.log('afaf')
 }
 
+// animateValue("value", 0, 3456, 100);
+// animateValue("value4", 0, 10, 1000); 
 
 
-console.log(document.querySelector('.about-achievements-list').getBoundingClientRect())
+
+
+// Function count number animation.
+// var offset = 600;
+// // Function start scrolling.
+// $(window).scroll(function(){
+//     var scrolltop = $(this).scrollTop();
+//     $('.achievement').each(function(){
+//         if(scrolltop >= $(this).offset().top - offset) {
+//             // each to element
+//             $('.achievement-item').each(function () {
+//                 $(this).find('.achievement-item-number').prop('Counter',0).animate({
+//                     Counter: $(this).data('count')
+//                     // Counter: $(this).find('.achievement-item-number').text()
+//                 }, {
+//                     //animation
+//                     duration: 2000,
+//                     easing: 'swing',
+//                     step: function (now) {
+//                         $(this).text(Math.ceil(now));
+//                     }
+//                 });
+//             });
+//         }
+//     });
+// });
+
+var options = {
+    useEasing: true, 
+    useGrouping: true, 
+    separator: ',', 
+    decimal: '.', 
+  };
+  var demo = new CountUp('myTargetElement', 0, 5142, 0, 2.5, options);
+  if (!demo.error) {
+    demo.start();
+  } else {
+    console.error(demo.error);
+  }

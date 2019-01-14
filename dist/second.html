@@ -10,12 +10,111 @@
     <title>Второй заголовок | Проект</title>
   </head>
   <body>
-    <header><img src="img/logo.svg" id="logo" /></header>
+    <header>
+      <!-- <div class="container"> -->
+      <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+        <!-- <div class="container"> -->
+        <ol class="phone-list list-dropdown">
+          <li>
+            <a itemprop="telephone" href="tel:+380505544555"
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
+            >
+          </li>
+          <li>
+            <a itemprop="telephone" href="tel:+380505544555"
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
+            >
+          </li>
+          <li>
+            <a itemprop="telephone" href="tel:+380505544555"
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
+            >
+          </li>
+        </ol>
+        <ol class="menu">
+          <li class="menu-item"><a href="#" class="item-linsk">Про компанію</a></li>
+          <li class="menu-item"><a href="#" class="item-link">Наші проекти</a></li>
+          <li class="menu-item"><a href="#" class="item-link">Підбір квартир</a></li>
+          <li class="menu-item logo">
+            <a href="#" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+          </li>
+          <li class="menu-item"><a href="#" class="item-link">Комерційна нерухомість</a></li>
+          <li class="menu-item small-item"><a href="#" class="item-link">Послуги</a></li>
+          <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
+        </ol>
+        <ol class="social-menu">
+          <li class="social-menu-item">
+            <a href="#"> <i class="icon icon-facebook">&#xf09a;</i> </a>
+          </li>
+          <li class="social-menu-item">
+            <a href="#"> <i class="icon icon-instagram">&#xf16d;</i> </a>
+          </li>
+          <li class="social-menu-item">
+            <a href="#"> <i class="icon icon-facebook">&#xf16a;</i> </a>
+          </li>
+          <li class="social-menu-item">
+            <ol class="language-list list-dropdown">
+              <li><a href="#">RU</a></li>
+              <li><a href="#">EN</a></li>
+              <li><a href="#">UA</a></li>
+            </ol>
+          </li>
+        </ol>
+        <!-- </div> -->
+      </nav>
+
+      <!-- </div> -->
+    </header>
 
     <div class="container">Вторая страница.</div>
 
-    <footer>Harrix</footer>
+    <footer>
+      <p>Comfart © Copyright 2019. All Rights Reserved.</p>
+      <p>Designed by BlueBird</p>
+    </footer>
 
     <script src="js/bundle.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""
+    ></script>
+
+    <script>
+      var map = L.map("mapdiv", {
+        center: [48.918853, 24.702638],
+        zoom: 17,
+        zoomControl: false,
+        attributionControl: false
+      });
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var LeafIcon = L.Icon.extend({
+        options: {
+          // shadowUrl: './img/map-marker-solid.svg',
+          iconSize: [38, 95],
+          shadowSize: [50, 64],
+          iconAnchor: [22, 94],
+          shadowAnchor: [4, 62],
+          popupAnchor: [-3, -76]
+        }
+      });
+
+      var greenIcon = new LeafIcon({ iconUrl: "./img/map-marker-solid.svg" });
+
+      L.marker([48.918853, 24.702638], { icon: greenIcon })
+        .bindPopup("I am a green leaf.")
+        .addTo(map);
+    </script>
   </body>
 </html>

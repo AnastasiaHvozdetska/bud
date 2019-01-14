@@ -23,7 +23,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
 
 const config = {
-  entry: ["./src/js/index.js", "./src/scss/style.scss", "./src/scss/sample.scss", "./src/scss/media.scss"],
+  entry: ["./src/js/index.js", "./src/js/countUp.js", "./src/scss/style.scss", "./src/scss/sample.scss", "./src/scss/media.scss"],
   output: {
     filename: "./js/bundle.js"
   },
@@ -38,12 +38,10 @@ const config = {
     ]
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(sass|scss)$/,
         include: path.resolve(__dirname, "src/scss"),
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader,
             options: {}
           },
@@ -92,8 +90,7 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "./css/style.bundle.css"
     }),
-    new CopyWebpackPlugin([
-      {
+    new CopyWebpackPlugin([{
         from: "./src/fonts",
         to: "./fonts"
       },
