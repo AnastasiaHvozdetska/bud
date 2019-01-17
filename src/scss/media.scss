@@ -4,23 +4,16 @@
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1) {
     .navigation {
-      border: 1px solid red;
+      padding-bottom: 0;
     }
-    .navigation .menu .menu-item:first-of-type {
-      grid-column-start: 1;
+
+    .navigation .menu .menu-item {
+      padding: 5px 10px;
+      &.logo img {
+        width: 100px;
+      }
     }
-    .navigation .menu .menu-item:nth-of-type(5) {
-      grid-column-start: 5;
-      grid-column-end: 7;
-    }
-    .navigation .menu .menu-item:nth-of-type(4) {
-      grid-column-start: 4;
-    }
-    .navigation .menu {
-      grid-template-columns: repeat(8,1fr);
-      grid-template-rows: 1fr;
-    }
-    header{
+    header {
       &::before {
         border-color: transparent transparent #ffffff;
         border-width: 0 0 200px 400px;
@@ -31,10 +24,31 @@
         border-width: 230px 0 0 1520px;
       }
     }
+    .slogan {
+      padding-top: 50px;
+    }
+
+    .company-slogan .left-triangle {
+      bottom: -180px;
+    }
+
     .about-company {
+      transform: translateY(-100px);
       .about-left {
         grid-column-start: 1;
         grid-column-end: 10;
+        .about-left-triangle {
+          position: absolute;
+          width: 100vw;
+          height: 315px;
+          background-color: red;
+          top: 52px;
+          left: -125px;
+          transform: rotate(-30deg);
+          border-bottom: 1px solid #929292;
+          z-index: 5;
+          right: 0;
+        }
         &::before {
           border-width: 510px 1100px 0 0;
         }

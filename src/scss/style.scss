@@ -103,13 +103,8 @@ header {
   right: 0;
   top: 0;
   position: fixed;
-  z-index: 99;
-}
-
-header.fixed {
-  top: -100px;
+  z-index: 999;
   transition: $transition;
-  z-index: 9999;
   &::after {
     content: '';
     display: block;
@@ -117,17 +112,26 @@ header.fixed {
     width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.79);
-    z-index: -1;
+    opacity: 0;
+    top: 0;
     left: 0;
+    z-index: -1;
+    transition: $transition;
+  }
+}
+
+header.fixed {
+  top: -100px;
+  transition: $transition;
+  &::after {
     transition: $transition;
     opacity: 1;
-    top: 0;
   }
 }
 
 
 .company-slogan {
-  height: 95vh;
+  height: 100vh;
   background-image: linear-gradient(to bottom,rgba(0,0,0,0.8) 5%,rgba(25,30,62,0) 100%),url('../img/header-bg.jpg');
   background-size: cover;
   background-position: center center;

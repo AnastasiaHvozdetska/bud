@@ -15,101 +15,76 @@ function fixedMenu () {
   }
 }
 
-
-// Counter.
-// let start = 0,
-//     end   = 3200;
-
-// console.log(document.querySelector('#counter').textContent);
-
-// console.log(start, end);
-
-// for (i=0; i <= end; i++) {
-//   document.querySelector('#counter').innerHTML = `${i}+`;
-// }
-let visibleBlock = false;
-
-function animateValue(id, start, end, duration) {
-  let range = end - start;
-  let current = start;
-  let increment = end > start? 1 : -1;
-  let stepTime = Math.round(Math.floor(duration / range));
-
-  let obj = document.getElementById(id);
-
-  let timer = setInterval(function() {
-      current += increment;
-      obj.innerHTML = `${current}+`;
-      if (current == end) {
-          clearInterval(timer);
-      }
-  }, stepTime);
-
-  visibleBlock = true;
-}
-
-
-
-document.addEventListener('scroll', function () {
-
-  if (window.pageYOffset > 600){
-    console.log(visibleBlock)
-    if (visibleBlock) {
-      animateValue("value", 0, 3456, 100);
-    }
-  } 
-})
-
-
-if (visibleBlock) {
-  animateValue("value", 0, 3456, 100);
-  animateValue("value2", 0, 245, 100);
-  animateValue("value3", 0, 23, 1000);
-  animateValue("value4", 0, 10, 1000); 
-} else {
-  console.log('afaf')
-}
-
-// animateValue("value", 0, 3456, 100);
-// animateValue("value4", 0, 10, 1000); 
-
-
-
-
 // Function count number animation.
-// var offset = 600;
-// // Function start scrolling.
-// $(window).scroll(function(){
-//     var scrolltop = $(this).scrollTop();
-//     $('.achievement').each(function(){
-//         if(scrolltop >= $(this).offset().top - offset) {
-//             // each to element
-//             $('.achievement-item').each(function () {
-//                 $(this).find('.achievement-item-number').prop('Counter',0).animate({
-//                     Counter: $(this).data('count')
-//                     // Counter: $(this).find('.achievement-item-number').text()
-//                 }, {
-//                     //animation
-//                     duration: 2000,
-//                     easing: 'swing',
-//                     step: function (now) {
-//                         $(this).text(Math.ceil(now));
-//                     }
-//                 });
-//             });
-//         }
-//     });
-// });
+function Inc(obj) {
+  let elem = obj.elem;
+  let input = (elem.nodeName.toLowerCase() === 'input') ? true: false;
+  let value = parseFloat(elem.getAttribute('data-inc-value')) || 0;
+  let duration = parseInt(elem.getAttribute('data-inc-duration')) || 0;
+  let delay = parseInt(elem.getAttribute('data-inc-delay')) || 0;
+  let decimal = ((obj.decimal > 2) ? 2 : obj.decimal) || 0;
+  let currency = obj.currency || '';
+  let speed = ((obj.speed < 30) ? 30 : obj.speed) || 30;
+  let count = 0;
+  let increment = value / (duration / speed);
+  let interval = null;
+  let regex = /\B(?=(\d{3})+(?!\d))/g;
 
-var options = {
-    useEasing: true, 
-    useGrouping: true, 
-    separator: ',', 
-    decimal: '.', 
+  let run = function() {
+    count += increment;
+    if (count < value) {
+      (input) ? elem.value = (count).toFixed(decimal).toString().replace(regex, ',') + currency : elem.innerHTML = (count).toFixed(decimal).toString().replace(regex, ',') + currency;
+    } else {
+      clearInterval(interval);
+      (input) ? elem.value = (value).toFixed(decimal).toString().replace(regex, ',') + currency  : elem.innerHTML = (value).toFixed(decimal).toString().replace(regex, ',') + currency;
+    }
   };
-  var demo = new CountUp('myTargetElement', 0, 5142, 0, 2.5, options);
-  if (!demo.error) {
-    demo.start();
-  } else {
-    console.error(demo.error);
+  setTimeout(function() {
+    interval = setInterval(run.bind(this), speed);
+  }.bind(this), delay);
+  this.reset = function() {
+    clearInterval(interval);
+    value = parseFloat(elem.getAttribute('data-inc-value')) || 0;
+    duration = parseInt(elem.getAttribute('data-inc-duration')) || 0;
+    increment = value / (duration / speed);
+    delay = parseInt(elem.getAttribute('data-inc-delay')) || 0;
+    count = 0;
+    interval = setInterval(run, speed);
+  }.bind(this);
+}
+
+
+// Inc
+var elems = [
+  document.querySelector('li.achievements-item:nth-of-type(1) span'),
+  document.querySelector('li.achievements-item:nth-of-type(2) span'),
+  document.querySelector('li.achievements-item:nth-of-type(3) span'),
+  document.querySelector('li.achievements-item:nth-of-type(4) span')
+];
+var objs = [];
+
+
+
+var start = false;
+
+document.addEventListener('scroll', function() {
+
+  if(!start) {
+    if (document.querySelector('.about-achievements-list').getBoundingClientRect().top < 400) {
+
+      for (var i = 0, l = elems.length; i < l; i++) {
+        objs.push(
+          new Inc({
+            elem: elems[i],
+            speed: 50,
+            decimal: 0,
+            currency: '+'
+          })
+        );
+      }
+
+      start = true;
+    }
   }
+
+});
