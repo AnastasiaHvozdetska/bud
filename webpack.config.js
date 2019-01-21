@@ -23,7 +23,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
 
 const config = {
-  entry: ["./src/js/index.js", "./src/js/countUp.js", "./src/scss/style.scss", "./src/scss/sample.scss", "./src/scss/media.scss"],
+  entry: ["./src/js/index.js", "./src/scss/style.scss", "./src/scss/sample.scss", "./src/scss/media.scss"],
   output: {
     filename: "./js/bundle.js"
   },
@@ -103,8 +103,8 @@ const config = {
         to: "./img"
       },
       {
-        from: "./src/uploads",
-        to: "./uploads"
+        from: "./src/libs",
+        to: "./libs"
       }
     ])
   ].concat(htmlPlugins)
