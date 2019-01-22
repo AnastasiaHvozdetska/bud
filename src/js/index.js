@@ -8,7 +8,7 @@ function fixedMenu () {
   if (window.pageYOffset > 100){
     menu.classList.add('fixed');
     // Change logo.
-    menu.querySelector('.logo a img').setAttribute('src', "./img/partner-logo1.svg");
+    menu.querySelector('.logo a img').setAttribute('src', "./img/svg/partner-logo1.svg");
   } else {
     menu.classList.remove('fixed');
     menu.querySelector('.logo a img').setAttribute('src', "./img/logo.png");
@@ -65,9 +65,11 @@ var elems = [
 var objs = [];
 var start = false;
 
+let container = document.querySelector('.about-achievements-list');
+
 function runCounter() {
   if(!start) {
-    if (document.querySelector('.about-achievements-list').getBoundingClientRect().top < 400) {
+    if ( container && document.querySelector('.about-achievements-list').getBoundingClientRect().top < 400) {
 
       for (var i = 0, l = elems.length; i < l; i++) {
         objs.push(
@@ -136,13 +138,13 @@ function triangleGenerate(array) {
       }
     })
 
-  }
+}
 
 triangleGenerate(document.querySelectorAll('.triangle'));
 
-// Click on mouse icon.
-document.querySelector('.mouse-icon').addEventListener('click', function(event) {
-  console.log(1);
-  window.scrollTo(0, 400);
-})
+// Click on mouse icon. (HAVE TO DO)
+// document.querySelector('.mouse-icon').addEventListener('click', function(event) {
+//   console.log(1);
+//   window.scrollTo(0, 400);
+// })
 

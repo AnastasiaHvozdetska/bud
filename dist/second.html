@@ -11,24 +11,22 @@
   </head>
   <body>
     <header>
-      <!-- <div class="container"> -->
       <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-        <!-- <div class="container"> -->
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
-            >
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+            </a>
           </li>
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
-            >
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+            </a>
           </li>
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555</a
-            >
+              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+            </a>
           </li>
         </ol>
         <ol class="menu">
@@ -60,10 +58,7 @@
             </ol>
           </li>
         </ol>
-        <!-- </div> -->
       </nav>
-
-      <!-- </div> -->
     </header>
 
     <div class="container">Вторая страница.</div>
@@ -115,6 +110,75 @@
       L.marker([48.918853, 24.702638], { icon: greenIcon })
         .bindPopup("I am a green leaf.")
         .addTo(map);
+
+      var tag = document.createElement("script");
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+          height: "360",
+          width: "640",
+          videoId: "GXM838nBLuw",
+          playerVars: {
+            autoplay: 1,
+            autohide: 1,
+            controls: 0,
+            showinfo: 0,
+            rel: 0,
+            enablejsapi: 1,
+            wmode: "transparent"
+          },
+          events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        vidRescale();
+        player.mute();
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+          player.playVideo();
+        } else if (event.data === 1) {
+          document.querySelector(".video-bg").classList.add("active");
+          document.querySelector(".company-slogan").classList.add("active");
+        }
+      }
+
+      function vidRescale() {
+        let w = window.innerWidth + 200,
+          h = window.innerHeight + 200,
+          widthVideo = document.querySelector(".video-bg").offsetWidth;
+
+        let ww = -(widthVideo - w) / 2;
+
+        if (w / h > 16 / 9) {
+          player.setSize(w, (w / 16) * 9);
+          document.querySelector(".video-wrapper").style.left = "0px";
+        } else {
+          player.setSize((h / 9) * 16, h);
+          document.querySelector(".video-bg").style.left = ww + "px";
+        }
+      }
+
+      window.addEventListener("resize", vidRescale);
+      window.addEventListener("load", vidRescale);
     </script>
   </body>
 </html>

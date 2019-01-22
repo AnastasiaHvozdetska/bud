@@ -32,7 +32,7 @@
           }
         });
 
-        var greenIcon = new LeafIcon({iconUrl: './img/map-marker-solid.svg'});
+        var greenIcon = new LeafIcon({iconUrl: './img/svg/map-marker-solid.svg'});
 
         L.marker([48.918853, 24.702638], {icon: greenIcon}).bindPopup("I am a green leaf.").addTo(map);
 
@@ -76,31 +76,34 @@
         function onPlayerStateChange(event) {
           if (event.data === YT.PlayerState.ENDED) {
                 player.playVideo();
+          } else if (event.data === 1) {
+            document.querySelector('.video-bg').classList.add('active');
+            document.querySelector('.company-slogan').classList.add('active');
           }
+
         }
 
         function vidRescale() {
 
+          let w = window.innerWidth + 200,
+              h = window.innerHeight + 200,
+              widthVideo = document.querySelector('.video-bg').offsetWidth;
 
-        // if (w/h > 16/9){
-        let w = window.innerWidth + 200,
-            h = window.innerHeight + 200;
+          let ww = -(widthVideo - w) / 2;
 
-        console.log(w, h)
-        if (w/h > 16/9) {
-          player.setSize(w, w/16*9);
-        } else {
-          player.setSize(h/9*16, h);
-        }
-          // player.setSize(1000, 500);
-          // $('.tv .screen').css({'left': '0px'});
-        // } else {
-          // tv.setSize(h/9*16, h);
-          // $('.tv .screen').css({'left': -($('.tv .screen').outerWidth()-w)/2});
-          console.log(1)
+          if (w/h > 16/9) {
+            player.setSize(w, w/16*9);
+            document.querySelector('.video-wrapper').style.left = '0px';
+
+          } else {
+            player.setSize(h/9*16, h);
+            document.querySelector('.video-bg').style.left = ww + 'px';
+          }
+
         }
 
       window.addEventListener('resize', vidRescale);
+      window.addEventListener('load', vidRescale);
       </script>
   </body>
 </html>
