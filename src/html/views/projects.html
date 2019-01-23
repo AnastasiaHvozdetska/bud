@@ -1,0 +1,186 @@
+<% var data = {
+  title: "Наші проекти | VS BUD",
+  author: "Harrix",
+  bgImage: "style='background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/demo2.jpg)'",
+  videoId: '6BbhS2ESa_I'
+}; %>
+
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<main>
+  <%= _.template(require('./../includes/header-page.html'))(data) %>
+
+  <section class="our-projects page">
+    <div class="top-right triangle"></div>
+    <ol class="container">
+      <h2 class="section-heading">Для комфортного життя</h2>
+      <h5 class="section-subheading">Наші <span>проекти</span></h5>
+
+      <div class="project">
+        <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130"
+          preserveAspectRatio="xMinYMax slice">
+          <defs>
+            <pattern id="proj1" patternUnits="userSpaceOnUse" width="200" height="120" x="0" y="0">
+              <image xlink:href="../img/project-1.png" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+            </pattern>
+          </defs>
+          <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)" />
+        </svg>
+
+        <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+          <h3><span>Millenium</span></h3>
+          <h6>Житловий комплекс</h6>
+          <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum.</p>
+          <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+          <p class="project-address" itemprop="location">
+            <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+          </p>
+          <div class="phone-wrapper">
+            <i class="icon icon-phone">&#xe800;</i>
+            <ol class="phone-list">
+              <li class="list-item">
+                <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+              </li>
+              <li class="list-item">
+                <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- <a class="project-link" href="/single-project.html"></a> -->
+      </div>
+
+      <div class="project">
+        <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130"
+          preserveAspectRatio="xMinYMax slice">
+          <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)" />
+        </svg>
+
+        <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+          <h3><span>Фортеця</span></h3>
+          <h6>Житловий комплекс</h6>
+          <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum.</p>
+          <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+          <p class="project-address" itemprop="location">
+            <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+          </p>
+          <div class="phone-wrapper">
+            <i class="icon icon-phone">&#xe800;</i>
+            <ol class="phone-list">
+              <li class="list-item">
+                <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+              </li>
+              <li class="list-item">
+                <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- <a class="project-link" href="/single-project.html"></a> -->
+      </div>
+
+      <div class="project">
+        <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130"
+          preserveAspectRatio="xMinYMax slice">
+          <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)" />
+        </svg>
+
+        <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+          <h3><span>Фортеця</span></h3>
+          <h6>Житловий комплекс</h6>
+          <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum.</p>
+          <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+
+          <p class="project-address" itemprop="location">
+            <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+          </p>
+          <div class="phone-wrapper">
+            <i class="icon icon-phone">&#xe800;</i>
+            <ol class="phone-list">
+              <li class="list-item">
+                <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+              </li>
+              <li class="list-item">
+                <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- <a class="project-link" href="/single-project.html"></a> -->
+      </div>
+
+      <div class="project">
+          <svg class="project-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" enable-background="new 0 0 180 130"
+            preserveAspectRatio="xMinYMax slice">
+            <path d="M139.7 120h-139.7v-72.1l63.6-47.9h136.4v79.5z" fill="url(#proj1)" />
+          </svg>
+  
+          <div class="project-description" itemscope itemtype="http://schema.org/Organization">
+            <h3><span>Фортеця</span></h3>
+            <h6>Житловий комплекс</h6>
+            <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+            <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+  
+            <p class="project-address" itemprop="location">
+              <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+            </p>
+            <div class="phone-wrapper">
+              <i class="icon icon-phone">&#xe800;</i>
+              <ol class="phone-list">
+                <li class="list-item">
+                  <a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a>
+                </li>
+                <li class="list-item">
+                  <a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <!-- <a class="project-link" href="/single-project.html"></a> -->
+      </div>
+
+      <ul class="pagination">
+        <li class="pagination-item">
+          <a href="#"> ❮ </a>
+        </li>
+        <li class="pagination-item">
+          <a class="active" href="#"> 1 </a>
+        </li>
+        <li class="pagination-item">
+          <a href="#"> 2 </a>
+        </li>
+        <li class="pagination-item">
+          <a href="#"> 3 </a>
+        </li>
+        <li class="pagination-item">
+          <a href="#"> ... </a>
+        </li>
+        <li class="pagination-item">
+          <a href="#"> ❯ </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <%= _.template(require('./../includes/contacts.html'))(data) %>
+</main>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

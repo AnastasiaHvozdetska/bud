@@ -1,0 +1,96 @@
+<% var data = {
+  title: "Наші проекти | VS BUD",
+  author: "Harrix",
+  bgImage: "style='background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/demo2.jpg)'",
+  headerHeading: '<span>Майбутнє вже</span> сьогодні',
+  headerSecondHeading: '',
+  videoId: 'ccByq4ZdWQI'
+}; %>
+
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<main>
+
+  <%= _.template(require('./../includes/header-page-large.html'))(data) %>
+
+  <section class="about about-project">
+      <div class="about-left">
+        <div class="about-left-content ">
+  
+          <h2 class="section-heading">Про компанію</h2>
+          <h5 class="section-subheading"><span>Високі</span> стандарти будівництва</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim
+            id est laborum.</p>
+          <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+  
+          <ol class="about-links">
+            <li class="about-links-item">
+              <a href="#">
+                <span>01</span>
+                Історія
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>02</span>
+                Команда
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>03</span>
+                Переваги
+              </a>
+            </li>
+            <li class="about-links-item">
+              <a href="#">
+                <span>04</span>
+                Досягнення
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+  
+      <div class="about-right">
+        <ol class="about-achievements-list achievement">
+          <li class="achievements-item achievement-item">
+            <span data-inc-value="3456" data-inc-duration="3000" data-inc-delay="0">0</span>
+            Збудовано м2
+          </li>
+          <li class="achievements-item achievement-item">
+            <span data-inc-value="245" data-inc-duration="3000" data-inc-delay="0">0</span>
+            Щасливих власників квартир
+          </li>
+          <li class="achievements-item achievement-item">
+            <span data-inc-value="23" data-inc-duration="3000" data-inc-delay="0" value="0">0</span>
+            Запланованих проекти
+          </li>
+          <li class="achievements-item achievement-item">
+            <span data-inc-value="10" data-inc-duration="3000" data-inc-delay="0">0</span>
+            Років на ринку
+          </li>
+        </ol>
+      </div>
+  
+      <div class="top-left triangle"></div>
+      <div class="top-right triangle"></div>
+  
+    </section>
+
+    <%= _.template(require('./../includes/contacts.html'))(data) %>
+
+</main>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

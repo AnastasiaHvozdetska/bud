@@ -12,6 +12,7 @@ function generateHtmlPlugins(templateDir) {
     const parts = item.split(".");
     const name = parts[0];
     const extension = parts[1];
+    console.log(parts)
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),

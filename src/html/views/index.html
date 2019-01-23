@@ -1,42 +1,21 @@
 <% var data = {
   title: "Головна сторінка | VS BUD",
-  author: "Anastasia Hvozdetska"
+  author: "Anastasia Hvozdetska",
+  bgImage: "style='background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/header-bg.jpg)'",
+  headerHeading: '<span>Гарантія</span> якості',
+  headerSecondHeading: 'Забезпечена роками наполегливої праці',
+  videoId: 'F9GC6YQ4voQ'
 }; %>
 
 
 <%= _.template(require('./../includes/header.html'))(data) %>
 
 <main>
-  <section class="company-slogan">
-    <div class="container">
-      <div class="slogan">
-        <h1><span>Гарантія</span> якості</h1>
-        <h4>Забезпечена роками наполегливої праці</h4>
-          <svg class="mouse-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="32px" height="52px"
-            viewBox="0 0 32 52" enable-background="new 0 0 32 52" xml:space="preserve">
-            <g>
-              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M16,51L16,51C7.7,51,1,44.3,1,36V16
-                  C1,7.7,7.7,1,16,1h0c8.3,0,15,6.7,15,15v20C31,44.3,24.3,51,16,51z" />
-              <path class="path" fill="#FFFFFF" d="M16,24L16,24c-1.4,0-2.5-1.1-2.5-2.5v-10c0-1.4,1.1-2.5,2.5-2.5h0c1.4,0,2.5,1.1,2.5,2.5v10
-                C18.5,22.9,17.4,24,16,24z" />
-            </g>
-          </svg>
-        
-      </div>
-    </div>
+    <%= _.template(require('./../includes/header-page-large.html'))(data) %>
 
-    <div class="video-wrapper">
-      <div class="video-bg" id="player"></div>
-    </div>
-
-    <div class="bottom-left triangle"></div>
-    <div class="bottom-right triangle"></div>
-  </section>
-
-  <section class="about-company">
-    <div class="about-left">
-      <div class="about-left-content">
+  <section class="about about-company">
+    <div class="left-wrapper about-left">
+      <div class="left-content about-left-content ">
 
         <h2 class="section-heading">Про компанію</h2>
         <h5 class="section-subheading"><span>Високі</span> стандарти будівництва</h5>
@@ -84,7 +63,7 @@
       </div>
     </div>
 
-    <div class="about-right">
+    <div class="right-wrapper about-right">
       <ol class="about-achievements-list achievement">
         <li class="achievements-item achievement-item">
           <span data-inc-value="3456" data-inc-duration="3000" data-inc-delay="0">0</span>
@@ -134,7 +113,7 @@
             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
             qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+          <a  href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
 
           <p class="project-address" itemprop="location">
             <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
@@ -167,7 +146,7 @@
             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
             qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+          <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
 
           <p class="project-address" itemprop="location">
             <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна

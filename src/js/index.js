@@ -54,7 +54,7 @@ function Inc(obj) {
 }
 
 // Inc
-var elems = [
+let elems = [
   document.querySelector('li.achievements-item:nth-of-type(1) span'),
   document.querySelector('li.achievements-item:nth-of-type(2) span'),
   document.querySelector('li.achievements-item:nth-of-type(3) span'),
@@ -62,8 +62,8 @@ var elems = [
 
 
 ];
-var objs = [];
-var start = false;
+let objs = [];
+let start = false;
 
 let container = document.querySelector('.about-achievements-list');
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', runCounter);
 // Ebani triangles.
 function triangleGenerate(array) {
 
-    Array.from(array).forEach(triangle => {
+  Array.from(array).forEach(triangle => {
       let width = triangle.offsetWidth,
           height = triangle.offsetHeight;
 
@@ -136,7 +136,7 @@ function triangleGenerate(array) {
 
         triangle.parentNode.insertBefore(cloneTriangle, triangle.nextSibling);
       }
-    })
+  })
 
 }
 
@@ -147,4 +147,31 @@ triangleGenerate(document.querySelectorAll('.triangle'));
 //   console.log(1);
 //   window.scrollTo(0, 400);
 // })
+
+
+// Create button for slider.
+(function () {
+  let slides = document.querySelectorAll('.glide__slide');
+
+  for (let i = 0; i < slides.length; i++) {
+    let button = document.createElement('button');
+    button.classList.add('glide__bullet');
+    button.setAttribute('data-glide-dir', `=${i}`);
+
+    document.querySelector('.glide__bullets').appendChild(button);
+  }
+}());
+
+// Initialisation slider.
+let slider = document.querySelector('.glide');
+if (slider) {
+  let glide = new Glide('.glide', {
+    type: 'carousel',
+    focusAt: '1',
+    perView: 4
+  });
+  
+  glide.mount();
+}
+
 
