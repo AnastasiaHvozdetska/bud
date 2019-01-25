@@ -209,15 +209,15 @@
 
   <section class="apartments">
     <div class="container">
-      <h5 class="section-subheading">Наша<span> історія</span></h5>
+      <h5 class="section-subheading">Вибір<span> квартири</span></h5>
       <ul class="filter-list">
-        <li class="filter-item active">Всі</li>
-        <li class="filter-item">1-Кімнатні</li>
-        <li class="filter-item">2-Кімнатні</li>
-        <li class="filter-item">3-Кімнатні</li>
+        <li class="filter-item active" data-category='all'>Всі</li>
+        <li class="filter-item" data-category='1'>1-Кімнатні</li>
+        <li class="filter-item" data-category='2'>2-Кімнатні</li>
+        <li class="filter-item" data-category='3'>3-Кімнатні</li>
       </ul>
       <div class="appartments-wrapper">
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="1">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -230,7 +230,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="2">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -243,7 +243,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="2">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -256,7 +256,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="3">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -269,7 +269,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="1">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -282,7 +282,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="3">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -295,7 +295,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="2">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -308,7 +308,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="1">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -321,7 +321,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="2">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -334,7 +334,7 @@
             <p class="total-area">Загальна площа: <span>77.2</span></p>
           </div>
         </div>
-        <div class="appartments-item">
+        <div class="appartments-item" data-category="3">
           <div class="item-heading">
             <h6>1-Кімнатна</h6>
             <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -357,45 +357,42 @@
         <div class="left-wrapper">
             <h5 class="section-subheading">Хід<span> будівництва</span></h5>
             <ul class="filter-list">
-                <li class="filter-item active">Грудень 2018</li>
-                <li class="filter-item">Листопад 2018</li>
-                <li class="filter-item">Жовтень 2018</li>
-                <li class="filter-item">Вересень 2018</li>
+              <li class="filter-item active" data-category="december">Грудень 2018</li>
+              <li class="filter-item" data-category="november">Листопад 2018</li>
+              <li class="filter-item" data-category="october">Жовтень 2018</li>
+              <li class="filter-item" data-category="september">Вересень 2018</li>
             </ul>
-            <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-                    <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-                </a>
-                                                    <figcaption itemprop="caption description">Image caption  1</figcaption>
-                                                    
-              </figure>
-          
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-                    <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-                </a>
-                <figcaption itemprop="caption description">Image caption 2</figcaption>
-              </figure>
-          
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-                    <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-                </a>
-                <figcaption itemprop="caption description">Image caption 3</figcaption>
-              </figure>
-          
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" itemprop="contentUrl" data-size="1024x768">
-                    <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" itemprop="thumbnail" alt="Image description" />
-                </a>
-                <figcaption itemprop="caption description">Image caption 4</figcaption>
-              </figure>
-          
-          
+            <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+              <a href="../img/demo1.jpg" data-size="1600x1068" data-med="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg"
+                data-med-size="1024x683" data-author="Samuel Rohl" data-category="september">
+                <img src="../img/demo1.jpg" alt="">
+                <figure>This is dummy caption. It has been placed here solely to demonstrate the look and feel of
+                  finished, typeset text.</figure>
+              </a>
+              <a href="../img/demo2.jpg" data-size="1600x1067" data-med="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg"
+                data-med-size="1024x683" data-author="Michael Hull" data-category="november">
+                <img src="../img/demo2.jpg" alt="">
+                <figure>Dummy caption. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes
+                  no sense.</figure>
+              </a>
+              <a href="../img/news-1.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg"
+                data-med-size="1024x683" data-author="Ales Krivec" data-category="september">
+                <img src="../img/news-1.jpg" alt="">
+                <figure>This is dummy caption. It is not meant to be read.</figure>
+              </a>
+              <a href="../img/news-2.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg"
+                data-med-size="1024x683" data-author="Folkert Gorter" data-category="october">
+                <img src="../img/news-2.jpg" alt="">
+                <figure>This is dummy caption.</figure>
+              </a>
+              <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg"
+                data-med-size="1024x683" data-author="Thomas Lefebvre" data-category="december">
+                <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt="">
+                <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
+              </a>
             </div>
         </div>
+
         <div class="right-wrapper">
             <h5 class="section-subheading">Загальні<span> характеристики</span></h5>
             <ul class="general-features-list">
@@ -423,7 +420,14 @@
     </div>
   </section>
 
-  <%= _.template(require('./../includes/contacts.html'))(data) %>
+
+
+
+    <%= _.template(require('./../includes/contacts.html'))(data) %>
+
+    <%= _.template(require('./../includes/gallery.html'))(data) %>
+
+    <%= _.template(require('./../includes/modal.html'))(data) %>
 
 </main>
 
