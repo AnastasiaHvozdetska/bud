@@ -470,7 +470,7 @@ if (slider) {
 })();
 
 
-// Filter appartments.
+// Filter apartments.
 let activeCategory;
 
 document.addEventListener('click', function(e){
@@ -493,6 +493,62 @@ document.addEventListener('click', function(e){
             }
             if (activeCategory === 'all') {
                 items[i].style.display = 'flex';
+            }
+        }
+    }
+})
+
+// Open modal.
+document.addEventListener('click', function (e) {
+    if (e.target.closest('.apartment-link')) {
+        e.preventDefault();
+        document.querySelector('body').classList.add('non-scroll');
+        document.querySelector('.modal-wrapper').classList.add('active');
+    }
+});
+
+// Close modal block.
+document.querySelector('.modal-wrapper').addEventListener('click', function (e) {
+    if ( !(e.target.closest('.modal-block')) || e.target.closest('.btn-close')) {
+        document.querySelector('body').classList.remove('non-scroll');
+        document.querySelector('.modal-wrapper').classList.remove('active');
+    }
+});
+
+
+// Selection filter.
+let apartmentNum;
+let apartmentsArray = document.querySelectorAll('.apartments-item');
+
+const data = [];
+
+// Get all apartments information.
+for (let i = 0; i < apartmentsArray.length; i++) {
+    
+    let complex = apartmentsArray[i].getAttribute('data-complex');
+    let roomCounter = apartmentsArray[i].getAttribute('data-room');
+    let totalArea = apartmentsArray[i].getAttribute('data-area');
+
+    let apartmentItem = {
+        complex, roomCounter, totalArea
+    }
+    data.push(apartmentItem);
+}
+
+console.log(data);
+
+
+document.querySelector('input[type="range"]').addEventListener('change', function () {
+    apartmentNum = this.value;
+    if (apartmentNum === '0') {
+        for (let i = 0; i < apartmentsArray.length; i++) {
+            apartmentsArray[i].style.backgroundColor = 'red';
+        }
+    } else {
+        for (let i = 0; i < apartmentsArray.length; i++) {
+            apartmentsArray[i].style.backgroundColor = 'white';
+            if(apartmentsArray[i].getAttribute('data-room') === apartmentNum) {
+                apartmentsArray[i].style.backgroundColor = 'red';
             }
         }
     }

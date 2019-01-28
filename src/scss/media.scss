@@ -3,25 +3,30 @@
   and (min-device-width: 1200px)
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .navigation {
-      padding-bottom: 0;
+    .triangle.top-left, .triangle.bottom-left  {
+      width: 80%;
     }
-
+    .triangle.bottom-left {
+      height: 200px;
+    }
+    .triangle.top-right {
+      width: 20%;
+      height: 50px;
+    }
+    .triangle.bottom-right {
+      width: 20%;
+      height: 20%;
+    }
+    .about.about-company .triangle.top-right {
+      width: 20%;
+    }
+    .header-page.large .triangle {
+      bottom: 50px;
+    }
     .navigation .menu .menu-item {
       padding: 5px 10px;
       &.logo img {
         width: 100px;
-      }
-    }
-    header {
-      &::before {
-        border-color: transparent transparent #ffffff;
-        border-width: 0 0 200px 400px;
-        right: 0;
-        z-index: 5;
-      }
-      &::after {
-        border-width: 230px 0 0 1520px;
       }
     }
     .slogan {
@@ -32,8 +37,8 @@
       // bottom: -180px;
     }
 
-    .about-company {
-      transform: translateY(-100px);
+    .about.about-company {
+      transform: translateY(-50px);
       .about-left {
         grid-column-start: 1;
         grid-column-end: 10;
@@ -84,5 +89,9 @@
           }
         }
       }
+    }
+
+    .about.about-project {
+      transform: translateY(-50px);
     }
 }

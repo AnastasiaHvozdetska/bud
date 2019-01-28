@@ -1,0 +1,166 @@
+<% var data = {
+  title: "Комерційна нерухомість | VS BUD",
+  author: "Harrix",
+  bgImage: "style='background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/demo2.jpg)'",
+  videoId: 'SM6qkxhhZaA',
+  className: ""
+}; %>
+
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<main>
+  <%= _.template(require('./../includes/header-page.html'))(data) %>
+
+  <section class="about about-commercial">
+    <div class="left-wrapper about-left">
+      <div class="left-content">
+        <h2 class="section-heading">Оберіть найкраще</h2>
+        <h5 class="section-subheading">Підбір<span> квартир</span></h5>
+      </div>
+    </div>
+
+    <div class="top-right triangle"></div>
+
+  </section>
+
+
+  <section class="selection">
+    <div class="container">
+      <div class="selection-wrapper">
+        <div class="selection-filter">
+          <h6>Параметри</h>
+            <div class="selection-category">
+              <p>Кількість кімнат</p>
+              <input type="range" value="0" min="0" max="5" step="1">
+              <ul class="range-labels">
+                <li class="active selected">All</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+              </ul>
+            </div>
+            <div class="selection-category">
+              <p>Площа</p>
+
+              <span>Від </span> <input value="" name="min" type="number">
+              <span>До</span> <input value="" name="max" type="number"> <span>М2</span>
+
+              <input type="range" value="0" min="0" max="5" step="1">
+              <ul class="range-labels">
+                <li class="active selected">All</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+              </ul>
+            </div>
+            <div class="selection-category">
+                <p>Житловий комплекс</p>
+
+            </div>
+        </div>
+
+        <div class="selection-items">
+          <div class="apartments-item" data-room="1" data-complex='millenium' data-area='70,2'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-room="2" data-complex='castle' data-area='57,8'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-room="3" data-complex='millenium' data-area='50,1'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-room="3" data-complex='fortress' data-area='72,2'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item sold" data-room="4" data-complex='castle' data-area='76,6'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)">
+              <div class="check-sold">
+                <p>Продано</p>
+              </div>
+            </div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-room="5" data-complex='fortress' data-area='60,2'>
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <%= _.template(require('./../includes/contacts.html'))(data) %>
+
+  <%= _.template(require('./../includes/modal.html'))(data) %>
+</main>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

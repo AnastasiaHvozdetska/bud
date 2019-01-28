@@ -1,24 +1,21 @@
 <% var data = {
-  title: "Millenium | VS BUD",
-  author: "Anastasia Hvozdetska",
+  title: "Комерційна нерухомість | VS BUD",
+  author: "Harrix",
   bgImage: "style='background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/demo2.jpg)'",
-  headerHeading: '<span>Майбутнє вже</span> сьогодні',
-  headerSecondHeading: '',
-  videoId: 'ccByq4ZdWQI',
-  className: "project large"
+  videoId: 'jCjOum3Fb7s',
+  className: ""
 }; %>
 
 <%= _.template(require('./../includes/header.html'))(data) %>
 
 <main>
+  <%= _.template(require('./../includes/header-page.html'))(data) %>
 
-  <%= _.template(require('./../includes/header-page-large.html'))(data) %>
-
-  <section class="about about-project">
+  <section class="about about-commercial">
     <div class="left-wrapper about-left">
       <div class="left-content">
-        <h3>Про компанію</h3>
-        <h6>Житловий комплекс</h6>
+        <h2 class="section-heading">Оберіть найкраще</h2>
+        <h5 class="section-subheading">Комерційна<span> нерухомість</span></h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
           dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -35,7 +32,6 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quibusdam fugit ipsam provident dolore
           labore. Corrupti provident quo adipisci facere, deleniti eum vitae quidem dicta iure error fugiat est
           perferendis aperiam ab, earum quisquam, nemo optio. Eius quod veritatis quia.</p>
-        <a href="#" class="download-link"><i class="icon icon-download-cloud">&#xf0ed;</i> Завантажити презентацію</a>
       </div>
     </div>
 
@@ -43,7 +39,7 @@
 
   </section>
 
-  <section class="project-advantages">
+  <section class="project-advantages commercial">
     <div class="container">
       <h2 class="section-heading">Наші переваги</h2>
       <div class="wrapper-advantages">
@@ -198,257 +194,120 @@
     </div>
   </section>
 
-  <section class="planning">
+  <section class="selection">
     <div class="container">
-      <h5 class="section-subheading">Планування</h5>
-      <a href="#" class="download-link"><i class="icon icon-download-cloud">&#xf0ed;</i> Завантажити презентацію</a>
-    </div>
-
-    <img src="../img/house2.png" alt="">
-  </section>
-
-  <section class="apartments">
-    <div class="container">
-      <h5 class="section-subheading">Вибір<span> квартири</span></h5>
-      <ul class="filter-list">
-        <li class="filter-item active" data-category='all'>Всі</li>
-        <li class="filter-item" data-category='1'>1-Кімнатні</li>
-        <li class="filter-item" data-category='2'>2-Кімнатні</li>
-        <li class="filter-item" data-category='3'>3-Кімнатні</li>
-      </ul>
-      <div class="apartments-wrapper">
-        <div class="apartments-item" data-category="1">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="2">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-        
-        <div class="apartments-item" data-category="2">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="3">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="1">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="3">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="2">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="1">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="2">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-        <div class="apartments-item" data-category="3">
-          <div class="item-heading">
-            <h6>1-Кімнатна</h6>
-            <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
-          </div>
-          <!-- <img src="../img/house5.png" alt=""> -->
-          <div class="item-body" style="background-image: url(../img/house5.png)"></div>
-          <div class="item-footer">
-            <p>Житлова площа: <span>35.89</span></p>
-            <p>Нежитлова площа: <span>41.31</span></p>
-            <p class="total-area">Загальна площа: <span>77.2</span></p>
-          </div>
-          <a href="#" class="apartment-link"></a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="building-info">
-    <div class="container">
-      <div class="about">
-        <div class="left-wrapper">
-            <h5 class="section-subheading">Хід<span> будівництва</span></h5>
-            <ul class="filter-list">
-              <li class="filter-item active" data-category="december">Грудень 2018</li>
-              <li class="filter-item" data-category="november">Листопад 2018</li>
-              <li class="filter-item" data-category="october">Жовтень 2018</li>
-              <li class="filter-item" data-category="september">Вересень 2018</li>
-            </ul>
-            <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
-              <a href="../img/demo1.jpg" data-size="1600x1068" data-med="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg"
-                data-med-size="1024x683" data-author="Samuel Rohl" data-category="september">
-                <img src="../img/demo1.jpg" alt="">
-                <figure>This is dummy caption. It has been placed here solely to demonstrate the look and feel of
-                  finished, typeset text.</figure>
-              </a>
-              <a href="../img/demo2.jpg" data-size="1600x1067" data-med="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg"
-                data-med-size="1024x683" data-author="Michael Hull" data-category="november">
-                <img src="../img/demo2.jpg" alt="">
-                <figure>Dummy caption. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes
-                  no sense.</figure>
-              </a>
-              <a href="../img/news-1.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg"
-                data-med-size="1024x683" data-author="Ales Krivec" data-category="september">
-                <img src="../img/news-1.jpg" alt="">
-                <figure>This is dummy caption. It is not meant to be read.</figure>
-              </a>
-              <a href="../img/news-2.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg"
-                data-med-size="1024x683" data-author="Folkert Gorter" data-category="october">
-                <img src="../img/news-2.jpg" alt="">
-                <figure>This is dummy caption.</figure>
-              </a>
-              <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg"
-                data-med-size="1024x683" data-author="Thomas Lefebvre" data-category="december">
-                <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt="">
-                <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
-              </a>
+      <h5 class="section-subheading">Підбір комерційної<span> нерухомості</span></h5>
+      <div class="selection-wrapper">
+        <div class="selection-filter">
+          <h6>Параметри</h>
+            <div class="selection-category">
+              <p>Кількість кімнат</p>
+              <input type="range" value="0" min="0" max="5" step="1">
+              <ul class="range-labels">
+                  <li class="active selected">All</li>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                </ul>
             </div>
         </div>
 
-        <div class="right-wrapper">
-            <h5 class="section-subheading">Загальні<span> характеристики</span></h5>
-            <ul class="general-features-list">
-              <li class="features-item">
-                <p>Кількість секцій: <span>5</span></p>
-              </li>
-              <li class="features-item">
-                <p>Кількість поверхів: <span>9</span></p>
-              </li>
-              <li class="features-item">
-                <p>Конструктивна схема будівлі: <span>цегляний</span></p>
-              </li>
-              <li class="features-item">
-                <p>Ліфт: <span>так</span></p>
-              </li>
-              <li class="features-item">
-                <p>Стіни зовнішні: <span>цегла</span></p>
-              </li>
-              <li class="features-item">
-                <p>Утеплення фасаду: <span>так</span></p>
-              </li>
-            </ul>
+        <div class="selection-items">
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
+          <div class="apartments-item" data-category="2">
+            <div class="item-heading">
+              <h6>1-Кімнатна</h6>
+              <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
+            </div>
+            <!-- <img src="../img/house5.png" alt=""> -->
+            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-footer">
+              <p>Житлова площа: <span>35.89</span></p>
+              <p>Нежитлова площа: <span>41.31</span></p>
+              <p class="total-area">Загальна площа: <span>77.2</span></p>
+            </div>
+            <a href="#" class="apartment-link"></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
 
+  <%= _.template(require('./../includes/contacts.html'))(data) %>
 
-
-    <%= _.template(require('./../includes/contacts.html'))(data) %>
-
-    <%= _.template(require('./../includes/gallery.html'))(data) %>
-
-    <%= _.template(require('./../includes/modal.html'))(data) %>
-
+  <%= _.template(require('./../includes/modal.html'))(data) %>
 </main>
 
 <%= _.template(require('./../includes/footer.html'))(data) %>
