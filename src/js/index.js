@@ -14,12 +14,31 @@ function fixedMenu () {
   if (window.pageYOffset > 100){
     menu.classList.add('fixed');
     // Change logo.
-    menu.querySelector('.logo a img').setAttribute('src', "./img/svg/partner-logo1.svg");
+    menu.querySelector('.logo a img').setAttribute('src', "/img/svg/partner-logo1.svg");
   } else {
     menu.classList.remove('fixed');
-    menu.querySelector('.logo a img').setAttribute('src', "./img/logo.png");
+    menu.querySelector('.logo a img').setAttribute('src', "/img/logo.png");
   }
 }
+
+// Scroll to contacts.
+document.querySelector('#contacts').addEventListener('click', function (e) {
+    e.preventDefault();
+    let contacts = document.querySelector('.contacts');
+    contacts.scrollIntoView({block: 'start', behavior: 'smooth'})
+});
+
+// Click on mouse icon.
+let mouse = document.querySelector('.mouse-icon');
+
+if (mouse) {
+    mouse.addEventListener('click', function (e) {
+        e.preventDefault();
+        let about = document.querySelector('.about-company');
+        about.scrollIntoView({block: 'end', behavior: 'smooth'})
+    });
+}
+
 
 // Function count number animation.
 function Inc(obj) {
@@ -75,7 +94,7 @@ let container = document.querySelector('.about-achievements-list');
 
 function runCounter() {
   if(!start) {
-    if ( container && document.querySelector('.about-achievements-list').getBoundingClientRect().top < 400) {
+    if ( container && document.querySelector('.about-achievements-list').getBoundingClientRect().top < 500) {
 
       for (var i = 0, l = elems.length; i < l; i++) {
         objs.push(
@@ -140,12 +159,6 @@ function triangleGenerate(array) {
   })
 
 }
-
-// Click on mouse icon. (HAVE TO DO)
-// document.querySelector('.mouse-icon').addEventListener('click', function(event) {
-//   console.log(1);
-//   window.scrollTo(0, 400);
-// })
 
 // Create button for slider.
 (function () {
@@ -465,7 +478,7 @@ if (slider) {
         }
     };
 
-    initPhotoSwipeFromDOM('.demo-gallery');
+    initPhotoSwipeFromDOM('.my-gallery');
 
 })();
 
@@ -508,48 +521,104 @@ document.addEventListener('click', function (e) {
 });
 
 // Close modal block.
-document.querySelector('.modal-wrapper').addEventListener('click', function (e) {
-    if ( !(e.target.closest('.modal-block')) || e.target.closest('.btn-close')) {
-        document.querySelector('body').classList.remove('non-scroll');
-        document.querySelector('.modal-wrapper').classList.remove('active');
+let modalBlock = document.querySelector('.modal-wrapper');
+if(modalBlock) {
+    document.querySelector('.modal-wrapper').addEventListener('click', function (e) {
+        if ( !(e.target.closest('.modal-block')) || e.target.closest('.btn-close')) {
+            document.querySelector('body').classList.remove('non-scroll');
+            document.querySelector('.modal-wrapper').classList.remove('active');
+        }
+    });
+}
+
+
+// Get min and max values of area.
+let min, max;
+
+function getMinMaxAreas() {
+    let array_apartments = document.querySelectorAll('.apartments-item'),
+    array_area = [];
+
+    for (let i = 0; i < array_apartments.length; i++) {
+        array_area.push( Number( array_apartments[i].getAttribute('data-area') ))
     }
-});
+
+    min = Math.min(...array_area);
+    max = Math.max(...array_area);
+}
 
 
 // Selection filter.
 let apartmentNum;
 let apartmentsArray = document.querySelectorAll('.apartments-item');
 
-const data = [];
 
-// Get all apartments information.
-for (let i = 0; i < apartmentsArray.length; i++) {
-    
-    let complex = apartmentsArray[i].getAttribute('data-complex');
-    let roomCounter = apartmentsArray[i].getAttribute('data-room');
-    let totalArea = apartmentsArray[i].getAttribute('data-area');
+let filter = document.querySelector('.selection-filter');
 
-    let apartmentItem = {
-        complex, roomCounter, totalArea
-    }
-    data.push(apartmentItem);
+if(filter) {
+    getMinMaxAreas();
+
+    document.querySelector('.selection-filter').addEventListener('change', filterItems, false);
+    document.querySelector('.selection-filter').addEventListener('keyup', filterItems, false);
+
+    document.querySelector('input[name="min-area"]').value = min;
+    document.querySelector('input[name="max-area"]').value = max;
+
+    document.querySelector('input[name="area"]').min = min;
+    document.querySelector('input[name="area"]').max = max;
 }
 
-console.log(data);
+function filterItems() {
+    let min_rooms_count, max_rooms_count;
+    let min_total_area, max_total_area;
+    let complex_name;
 
+    let array_data = this.querySelectorAll('input'),
+        rooms = document.querySelector('#rooms'),
+        array_apartments = document.querySelectorAll('.apartments-item'),
+        filter_data = {
+            'rooms_count': {
+                'min': '',
+                'max': ''
+            },
+            'area': {
+                'min': '',
+                'max': ''
+            },
+            'complex': ''
+        };
 
-document.querySelector('input[type="range"]').addEventListener('change', function () {
-    apartmentNum = this.value;
-    if (apartmentNum === '0') {
-        for (let i = 0; i < apartmentsArray.length; i++) {
-            apartmentsArray[i].style.backgroundColor = 'red';
-        }
-    } else {
-        for (let i = 0; i < apartmentsArray.length; i++) {
-            apartmentsArray[i].style.backgroundColor = 'white';
-            if(apartmentsArray[i].getAttribute('data-room') === apartmentNum) {
-                apartmentsArray[i].style.backgroundColor = 'red';
-            }
+        min_rooms_count = rooms.min;
+        
+    console.log(rooms.min)
+    // for (let i = 0; i < array_data.length; i++) {
+
+    //     if (array_data[i].name === 'rooms-count') {
+    //         filter_data.roomsCounter = array_data[i].value
+    //     } 
+
+    //     else if (array_data[i].name === 'area') {
+    //         filter_data.area.min = array_data[i].min;
+    //         filter_data.area.max = array_data[i].max
+    //     }
+    //     else if (array_data[i].name === 'complex') {
+
+    //     }
+
+    //     console.log(filter_data)
+    // }
+
+    console.log(rooms.min)
+
+    for (let i = 0; i < array_apartments.length; i++) {
+        if(array_apartments[i].getAttribute('data-room') === filter_data.roomsCounter ) {
+            array_apartments[i].style.backgroundColor = 'red';
         }
     }
-})
+}
+
+document.getElementById('complex').addEventListener('change', function () {
+    this.nextElementSibling.value = this.value;
+});
+
+

@@ -152,6 +152,32 @@ button {
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  .pagination-item {
+    a {
+      color: black;
+      width: 30px;
+      height: 30px;
+      background-color: #EAEAEA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: $transition;
+      font-size: 14px;
+      &.active {
+        background-color: $yellow;
+      }
+      &:hover {
+        background-color: $yellow;
+        transition: $transition;
+      }
+    }
+  }
+}
+
 
 body {
   padding: 0;
@@ -395,8 +421,10 @@ header.fixed {
   svg {
     grid-row-start: 5;
     width: 100%;
-    grid-column-end: 6;
-    grid-column-start: 1;
+    grid-column-start: 3;
+    width: 50px;
+    justify-self: center;
+    cursor: pointer;
   }
 }
 
@@ -410,6 +438,7 @@ header.fixed {
   .phone-list {
     font-size: 12px;
     padding-bottom: 5px;
+    margin: 20px 0;
     .icon {
       padding-right: 5px;
     }
@@ -422,7 +451,7 @@ header.fixed {
       justify-content: center;
       align-items: flex-end;
       grid-column: span 2;
-      padding: 0px 30px;
+      padding: 20px 30px;
       a {
         font-size: 12px;
         text-transform: uppercase;
@@ -472,6 +501,7 @@ header.fixed {
   .social-menu {
     display: flex;
     align-items: flex-end;
+    margin: 20px 0;
     li {
       padding: 0 7px;
     }
@@ -685,6 +715,14 @@ header.fixed {
         padding: 10px 0;
         font-size: 12px;
         line-height: 20px;
+        &.project-data {
+          padding-bottom: 5px;
+          padding-top: 15px;
+        }
+        &.project-price {
+          font-family: "MontserratBlack";
+          padding: 0;
+        }
         .icon {
           color: $yellow;
         }
@@ -745,7 +783,7 @@ header.fixed {
 }
 
 .last-news {
-  // padding-top: 80px;
+  height: auto;
   padding: 80px 0;
   .list-item {
     position: relative;
@@ -1164,31 +1202,6 @@ header.fixed {
     position: relative;
     left: calc(((100vw - 100%) / -2) + 20px);
   }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-    .pagination-item {
-      a {
-        color: black;
-        width: 30px;
-        height: 30px;
-        background-color: #EAEAEA;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: $transition;
-        font-size: 14px;
-        &.active {
-          background-color: $yellow;
-        }
-        &:hover {
-          background-color: $yellow;
-          transition: $transition;
-        }
-      }
-    }
-  }
 }
 
 
@@ -1302,7 +1315,7 @@ header.fixed {
 }
 
 
-/* COMMERCIAL SECTION*/
+/* COMMERCIAL PAGE*/
 .about.about-commercial {
   height: auto;
   .about-left h2 {
@@ -1351,6 +1364,59 @@ header.fixed {
 }
 
 
+/* NEWS PAGE*/
+.last-news.news {
+  position: relative;
+  padding-top: 0;
+  .section-heading {
+    position: relative;
+    left: -150px;
+  }
+  .news-wrapper {
+    &::after {
+      display: none;
+    }
+    .list-item:nth-child(4n) {
+      width: 100%;
+      grid-column: 1 / 4;
+      svg {
+        height: 400px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* ARTICLE PAGE*/
+.article-wrapper {
+  padding-bottom: 80px;
+  .container {
+    width: 960px;
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  .article-img, .article-title {
+    position: relative;
+    left: -100px;
+    width: calc(100% + 200px);
+    margin-bottom: 15px
+  }
+  .article-title {
+    margin-bottom: 50px;
+    font-size: 1.7em;
+  }
+  .my-gallery {
+    grid-template-columns: repeat(5,1fr);
+    padding: 30px 0;
+    img {
+      height: 220px;
+    }
+  }
+}
+
+
 /* FOOTER */
 footer {
   height: 50px;
@@ -1364,7 +1430,7 @@ footer {
 
 
 /* GALLERY */
-.demo-gallery {
+.my-gallery {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1374,7 +1440,7 @@ footer {
   }
 }
 
-.demo-gallery img {
+.my-gallery img {
   max-width: auto;
   max-width: 100%;
   border: 0;
@@ -1382,7 +1448,7 @@ footer {
   height: 250px;
 }
 
-.demo-gallery figure {
+.my-gallery figure {
   display: none;
 }
 

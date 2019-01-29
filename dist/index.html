@@ -7,6 +7,12 @@
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="stylesheet" href="css/style.bundle.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/default-skin/default-skin.css"
+    />
+
     <title>Головна сторінка | VS BUD</title>
   </head>
   <body>
@@ -15,29 +21,29 @@
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+              ><i class="icon icon-phone">&#xe801;</i> +38 050 55 44 555
             </a>
           </li>
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+              ><i class="icon icon-phone">&#xe801;</i> +38 050 55 44 555
             </a>
           </li>
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
-              ><i class="icon icon-phone">&#xe800;</i> +38 050 55 44 555
+              ><i class="icon icon-phone">&#xe801;</i> +38 050 55 44 555
             </a>
           </li>
         </ol>
         <ol class="menu">
           <li class="menu-item"><a href="/about-company.html" class="item-linsk">Про компанію</a></li>
           <li class="menu-item"><a href="/projects.html" class="item-link">Наші проекти</a></li>
-          <li class="menu-item"><a href="#" class="item-link">Підбір квартир</a></li>
+          <li class="menu-item"><a href="/selection.html" class="item-link">Підбір квартир</a></li>
           <li class="menu-item logo">
-            <a href="#" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+            <a href="/" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
           </li>
-          <li class="menu-item"><a href="#" class="item-link">Комерційна нерухомість</a></li>
-          <li class="menu-item small-item"><a href="#" class="item-link">Послуги</a></li>
+          <li class="menu-item"><a href="/commercial.html" class="item-link">Комерційна нерухомість</a></li>
+          <li class="menu-item small-item"><a href="/news.html" class="item-link">Новини</a></li>
           <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
         </ol>
         <ol class="social-menu">
@@ -62,7 +68,10 @@
     </header>
 
     <main>
-      <section class="company-slogan">
+      <section
+        class="header-page large"
+        style="background-image: linear-gradient(180deg,rgba(0,0,0,.8) 5%,rgba(25,30,62,0)),url(../img/header-bg.jpg)"
+      >
         <div class="container">
           <div class="slogan">
             <h1><span>Гарантія</span> якості</h1>
@@ -101,15 +110,15 @@
           </div>
         </div>
 
-        <div class="video-wrapper"><div class="video-bg" id="player"></div></div>
+        <div class="video-wrapper"><div class="video-bg" id="player" data-video="F9GC6YQ4voQ"></div></div>
 
         <div class="bottom-left triangle"></div>
         <div class="bottom-right triangle"></div>
       </section>
 
-      <section class="about-company">
-        <div class="about-left">
-          <div class="about-left-content">
+      <section class="about about-company">
+        <div class="left-wrapper about-left">
+          <div class="left-content about-left-content ">
             <h2 class="section-heading">Про компанію</h2>
             <h5 class="section-subheading"><span>Високі</span> стандарти будівництва</h5>
             <p>
@@ -123,7 +132,7 @@
               voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+            <a href="#"><i class="icon icon-right-big">&#xe803;</i> Детальніше</a>
 
             <ol class="about-links">
               <li class="about-links-item">
@@ -142,7 +151,7 @@
           </div>
         </div>
 
-        <div class="about-right">
+        <div class="right-wrapper about-right">
           <ol class="about-achievements-list achievement">
             <li class="achievements-item achievement-item">
               <span data-inc-value="3456" data-inc-duration="3000" data-inc-delay="0">0</span> Збудовано м2
@@ -202,13 +211,13 @@
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.
               </p>
-              <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+              <a href="/single-project.html"><i class="icon icon-right-big">&#xe804;</i> Детальніше</a>
 
               <p class="project-address" itemprop="location">
-                <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+                <i class="icon icon-location">&#xe804;</i> м. Івано-Франківськ, вул. Набережна
               </p>
               <div class="phone-wrapper">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
@@ -238,10 +247,10 @@
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.
               </p>
-              <a href="#"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
+              <a href="/single-project.html"><i class="icon icon-right-big">&#xe801;</i> Детальніше</a>
 
               <p class="project-address" itemprop="location">
-                <i class="icon icon-location">&#xe802;</i> м. Івано-Франківськ, вул. Набережна
+                <i class="icon icon-location">&#xe804;</i> м. Івано-Франківськ, вул. Набережна
               </p>
               <div class="phone-wrapper">
                 <i class="icon icon-phone">&#xe800;</i>
@@ -877,6 +886,9 @@
       <p>Designed by BlueBird</p>
     </footer>
 
+    <script src="./libs/photoswipe-ui-default.min.js"></script>
+    <script src="./libs/photoswipe.min.js"></script>
+
     <script src="./libs/glide.min.js"></script>
     <script src="js/bundle.js"></script>
 
@@ -927,6 +939,9 @@
       var firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+      // Get video ID.
+      let videoId = document.querySelector(".video-bg").getAttribute("data-video");
+
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
@@ -934,7 +949,7 @@
         player = new YT.Player("player", {
           height: "360",
           width: "640",
-          videoId: "GXM838nBLuw",
+          videoId: videoId,
           playerVars: {
             autoplay: 1,
             autohide: 1,
@@ -967,7 +982,7 @@
           player.playVideo();
         } else if (event.data === 1) {
           document.querySelector(".video-bg").classList.add("active");
-          document.querySelector(".company-slogan").classList.add("active");
+          document.querySelector(".header-page").classList.add("active");
         }
       }
 
