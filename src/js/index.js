@@ -10,16 +10,29 @@ document.addEventListener('DOMContentLoaded', runCounter);
 // Fixed menu on scroll.
 function fixedMenu () {
   let menu = document.querySelector('header');
+  let url = window.location;
 
   if (window.pageYOffset > 100){
     menu.classList.add('fixed');
     // Change logo.
-    menu.querySelector('.logo a img').setAttribute('src', "/img/svg/partner-logo1.svg");
+    menu.querySelector('.logo a img').setAttribute('src', `img/svg/partner-logo1.svg`);
   } else {
     menu.classList.remove('fixed');
-    menu.querySelector('.logo a img').setAttribute('src', "/img/logo.png");
+    menu.querySelector('.logo a img').setAttribute('src', `img/logo.png`);
   }
 }
+
+// Mobile button.
+(function() {
+    let dotsMenu = document.querySelector(".dots");
+    let menu = document.querySelector('.mobile-nav');
+    
+    dotsMenu.addEventListener("click", function() {
+        menu.classList.toggle('active');
+      return dotsMenu.classList.toggle("on");
+    });
+  
+}).call(this);
 
 // Scroll to contacts.
 document.querySelector('#contacts').addEventListener('click', function (e) {
@@ -38,7 +51,6 @@ if (mouse) {
         about.scrollIntoView({block: 'end', behavior: 'smooth'})
     });
 }
-
 
 // Function count number animation.
 function Inc(obj) {
@@ -78,7 +90,7 @@ function Inc(obj) {
   }.bind(this);
 }
 
-// Inc
+// Inc.
 let elems = [
   document.querySelector('li.achievements-item:nth-of-type(1) span'),
   document.querySelector('li.achievements-item:nth-of-type(2) span'),
@@ -183,7 +195,7 @@ if (slider) {
     perView: 4,
     dots: true
   });
-  
+
   glide.mount();
 }
 
@@ -205,7 +217,7 @@ if (slider) {
             for(var i = 0; i < numNodes; i++) {
                 el = thumbElements[i];
 
-                // include only element nodes 
+                // include only element nodes
                 if(el.nodeType !== 1) {
                   continue;
                 }
@@ -283,8 +295,8 @@ if (slider) {
                 index;
 
             for (var i = 0; i < numChildNodes; i++) {
-                if(childNodes[i].nodeType !== 1) { 
-                    continue; 
+                if(childNodes[i].nodeType !== 1) {
+                    continue;
                 }
 
                 if(childNodes[i] === clickedListItem) {
@@ -313,10 +325,10 @@ if (slider) {
                 if(!vars[i]) {
                     continue;
                 }
-                var pair = vars[i].split('=');  
+                var pair = vars[i].split('=');
                 if(pair.length < 2) {
                     continue;
-                }           
+                }
                 params[pair[0]] = pair[1];
             }
 
@@ -344,7 +356,7 @@ if (slider) {
                     // See Options->getThumbBoundsFn section of docs for more info
                     var thumbnail = items[index].el.children[0],
                         pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                        rect = thumbnail.getBoundingClientRect(); 
+                        rect = thumbnail.getBoundingClientRect();
 
                     return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
                 },
@@ -357,13 +369,13 @@ if (slider) {
                     captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
                     return true;
                 }
-                
+
             };
 
 
             if(fromURL) {
                 if(options.galleryPIDs) {
-                    // parse real index when custom PIDs are used 
+                    // parse real index when custom PIDs are used
                     // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
                     for(var j = 0; j < items.length; j++) {
                         if(items[j].pid == index) {
@@ -429,7 +441,7 @@ if (slider) {
                         useLargeImages = true;
                         imageSrcWillChange = true;
                     }
-                    
+
                 } else {
                     if(useLargeImages) {
                         useLargeImages = false;
@@ -467,6 +479,7 @@ if (slider) {
         // select all gallery elements
         var galleryElements = document.querySelectorAll( gallerySelector );
         for(var i = 0, l = galleryElements.length; i < l; i++) {
+            console.log(galleryElements[i])
             galleryElements[i].setAttribute('data-pswp-uid', i+1);
             galleryElements[i].onclick = onThumbnailsClick;
         }
@@ -547,7 +560,6 @@ function getMinMaxAreas() {
     max = Math.max(...array_area);
 }
 
-
 // Selection filter.
 let apartmentNum;
 let apartmentsArray = document.querySelectorAll('.apartments-item');
@@ -556,6 +568,7 @@ let apartmentsArray = document.querySelectorAll('.apartments-item');
 let filter = document.querySelector('.selection-filter');
 
 if(filter) {
+
     getMinMaxAreas();
 
     document.querySelector('.selection-filter').addEventListener('change', filterItems, false);
@@ -564,61 +577,113 @@ if(filter) {
     document.querySelector('input[name="min-area"]').value = min;
     document.querySelector('input[name="max-area"]').value = max;
 
-    document.querySelector('input[name="area"]').min = min;
-    document.querySelector('input[name="area"]').max = max;
+    document.querySelector('input[name="min"]').value = 1;
+    document.querySelector('input[name="min"]').min = min;
+    document.querySelector('input[name="min"]').max = max;
+
+    document.querySelector('input[name="max"]').value = max;
+    document.querySelector('input[name="max"]').min = min;
+    document.querySelector('input[name="max"]').max = max;
+
+    document.querySelector('.range[name="min"]').addEventListener('change', function() {
+        document.querySelector('#min-area').value = this.value;
+    });
+      
+    document.querySelector('.range[name="max"]').addEventListener('change', function() {
+        if (document.querySelector('input[name="max"]').value < document.querySelector('input[name="min"]').value) {
+            let max = document.querySelector('input[name="max-area"]').value;
+            let min = document.querySelector('input[name="min-area"]').value;
+            let tmp = document.querySelector('input[name="min-area"]').value;
+            
+            // document.querySelector('input[name="min-area"]').value = max;
+            // document.querySelector('input[name="max-area"]').value = min
+            
+        } else {
+            document.querySelector('#max-area').value = this.value;
+        }
+    });
+      
+    document.querySelector('#min-area').addEventListener('keyup', function() {
+        document.querySelector('.range[name="min"]').value = this.value;
+    });
+      
+    document.querySelector('#max-area').addEventListener('keyup', function() {
+        document.querySelector('.range[name="max"]').value = this.value;
+    });
+
+    document.getElementById('rooms').addEventListener('change', function() {
+        let w = this.offsetWidth;
+        let count = Number(this.getAttribute('max'));
+        let value = this.value;
+        
+        let range = (w / count) * value
+        console.log(range);
+        this.style.background = `linear-gradient(to right, #ffce00, #ffce00, #ffce00, ${range}px, #000, #000)`
+    })
 }
 
 function filterItems() {
-    let min_rooms_count, max_rooms_count;
+    let rooms_count;
     let min_total_area, max_total_area;
     let complex_name;
 
-    let array_data = this.querySelectorAll('input'),
-        rooms = document.querySelector('#rooms'),
-        array_apartments = document.querySelectorAll('.apartments-item'),
-        filter_data = {
-            'rooms_count': {
-                'min': '',
-                'max': ''
-            },
-            'area': {
-                'min': '',
-                'max': ''
-            },
-            'complex': ''
-        };
+     let rooms = document.querySelector('#rooms'),
+        min_area = document.querySelector('#min-area'),
+        max_area = document.querySelector('#max-area'),
+        complex = document.querySelector('#complex'),
+        array_apartments = document.querySelectorAll('.apartments-item');
 
-        min_rooms_count = rooms.min;
-        
-    console.log(rooms.min)
-    // for (let i = 0; i < array_data.length; i++) {
 
-    //     if (array_data[i].name === 'rooms-count') {
-    //         filter_data.roomsCounter = array_data[i].value
-    //     } 
+        // Set current values.
+        rooms_count = rooms.value;
+        min_total_area = min_area.value;
+        max_total_area = max_area.value;
+        complex_name = complex.value;
 
-    //     else if (array_data[i].name === 'area') {
-    //         filter_data.area.min = array_data[i].min;
-    //         filter_data.area.max = array_data[i].max
-    //     }
-    //     else if (array_data[i].name === 'complex') {
 
-    //     }
-
-    //     console.log(filter_data)
-    // }
-
-    console.log(rooms.min)
 
     for (let i = 0; i < array_apartments.length; i++) {
-        if(array_apartments[i].getAttribute('data-room') === filter_data.roomsCounter ) {
+        let data_area = array_apartments[i].getAttribute('data-area');
+
+        let apartments = rooms_count === '0' ? true : array_apartments[i].getAttribute('data-room') === rooms_count;
+        let area = Number(data_area) >= Number(min_total_area) && Number(data_area) <= Number(max_total_area);
+        let test = complex_name === 'all' ? true : array_apartments[i].getAttribute('data-complex') === complex_name;
+
+        array_apartments[i].style.backgroundColor = 'white';
+
+        if(apartments && area && test) {
             array_apartments[i].style.backgroundColor = 'red';
         }
     }
 }
 
-document.getElementById('complex').addEventListener('change', function () {
-    this.nextElementSibling.value = this.value;
-});
+
+
+function getVals(){
+  // Get slider values
+  let parent = this.parentNode;
+  let slides = parent.querySelectorAll(".range");
+    let slide1 = parseFloat( slides[0].value );
+    let slide2 = parseFloat( slides[1].value );
+  // Neither slider will clip the other, so make sure we determine which is larger
+  if( slide1 > slide2 ){ 
+      let tmp = slide2; slide2 = slide1; slide1 = tmp;
+    }
+}
+
+window.onload = function(){
+  // Initialize Sliders
+  let sliderSections = document.getElementsByClassName("range-slider");
+      for( let x = 0; x < sliderSections.length; x++ ){
+        let sliders = sliderSections[x].querySelectorAll(".range");
+        for( var y = 0; y < sliders.length; y++ ){
+          if( sliders[y].type ==="range" ){
+            sliders[y].oninput = getVals;
+            // Manually trigger event first time to display values
+            sliders[y].oninput();
+          }
+        }
+      }
+}
 
 
