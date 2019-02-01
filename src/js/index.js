@@ -10,15 +10,11 @@ document.addEventListener('DOMContentLoaded', runCounter);
 // Fixed menu on scroll.
 function fixedMenu () {
   let menu = document.querySelector('header');
-  let url = window.location;
 
   if (window.pageYOffset > 100){
     menu.classList.add('fixed');
-    // Change logo.
-    menu.querySelector('.logo a img').setAttribute('src', `img/svg/partner-logo1.svg`);
   } else {
     menu.classList.remove('fixed');
-    menu.querySelector('.logo a img').setAttribute('src', `img/logo.png`);
   }
 }
 

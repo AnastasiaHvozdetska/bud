@@ -17,7 +17,11 @@
   </head>
   <body>
     <header>
-      <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+      <nav
+        class="navigation container mobile-nav"
+        itemscope="itemscope"
+        itemtype="http://schema.org/SiteNavigationElement"
+      >
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
@@ -40,11 +44,14 @@
           <li class="menu-item"><a href="/projects.html" class="item-link">Наші проекти</a></li>
           <li class="menu-item"><a href="/selection.html" class="item-link">Підбір квартир</a></li>
           <li class="menu-item logo">
-            <a href="/" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+            <a href="/" class="item-link">
+              <img class="big-logo" src="./img/logo.png" alt="" />
+              <img class="small-logo" src="./img/svg/logo.svg" alt="" />
+            </a>
           </li>
           <li class="menu-item"><a href="/commercial.html" class="item-link">Комерційна нерухомість</a></li>
           <li class="menu-item small-item"><a href="/news.html" class="item-link">Новини</a></li>
-          <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
+          <li class="menu-item small-item"><a href="#" id="contacts" class="item-link">Контакти</a></li>
         </ol>
         <ol class="social-menu">
           <li class="social-menu-item">
@@ -57,14 +64,14 @@
             <a href="#"> <i class="icon icon-facebook">&#xf16a;</i> </a>
           </li>
           <li class="social-menu-item">
-            <ol class="language-list list-dropdown">
-              <li><a href="#">RU</a></li>
-              <li><a href="#">EN</a></li>
+            <ol class="language-list">
               <li><a href="#">UA</a></li>
             </ol>
           </li>
         </ol>
       </nav>
+      <button class="dots"><span></span></button>
+      <a href="/" class="mobile-link-logo"> <img src="./img/logo.png" alt="" /> </a>
     </header>
 
     <main>
@@ -92,40 +99,55 @@
         <div class="container">
           <div class="selection-wrapper">
             <div class="selection-filter">
-              <h6>Параметри</h6>
+              <h6>Параметри квартири</h6>
               <div class="selection-category">
                 <p>Кількість кімнат</p>
-                <input type="range" value="0" min="0" max="5" step="1" />
+                <div class="wrapp">
+                  <input id="rooms" name="rooms-count" type="range" value="0" min="0" max="5" step="1" />
+                  <div class="bg-after"></div>
+                  <ul class="range-labels">
+                    <li class="active selected">All</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selection-category area">
+                <p>Площа</p>
+
+                <span>Від </span> <input id="min-area" value="" name="min-area" type="number" /> <span>До</span>
+                <input id="max-area" value="" name="max-area" type="number" /> <span>М2</span>
+
+                <!-- <input type="range" value="0" name="area" min="0" max="5" step="1"> -->
+                <div class="range-slider">
+                  <input class="range" name="min" value="" min="" max="" step="0.1" type="range" />
+                  <input class="range" name="max" value="" min="" max="" step="0.1" type="range" />
+                </div>
+
                 <ul class="range-labels">
-                  <li class="active selected">All</li>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5</li>
+                  <li class="active selected">50</li>
+                  <li>55</li>
+                  <li>60</li>
+                  <li>65</li>
+                  <li>70</li>
                 </ul>
               </div>
               <div class="selection-category">
-                <p>Площа</p>
-
-                <span>Від </span> <input value="" name="min" type="number" /> <span>До</span>
-                <input value="" name="max" type="number" /> <span>М2</span>
-
-                <input type="range" value="0" min="0" max="5" step="1" />
-                <ul class="range-labels">
-                  <li class="active selected">All</li>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5</li>
-                </ul>
+                <p>Житловий комплекс</p>
+                <select id="complex">
+                  <option selected="selected" value="all">Обрати всі</option>
+                  <option value="millenium">Millenium</option>
+                  <option value="fortress">Fortress</option>
+                </select>
+                <input type="hidden" name="complex" value="all" />
               </div>
-              <div class="selection-category"><p>Житловий комплекс</p></div>
             </div>
 
             <div class="selection-items">
-              <div class="apartments-item" data-room="1" data-complex="millenium" data-area="70,2">
+              <div class="apartments-item" data-room="1" data-complex="millenium" data-area="70.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -139,7 +161,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-room="2" data-complex="castle" data-area="57,8">
+              <div class="apartments-item" data-room="1" data-complex="fortress" data-area="57.8">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -153,7 +175,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-room="3" data-complex="millenium" data-area="50,1">
+              <div class="apartments-item" data-room="1" data-complex="millenium" data-area="50.1">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -167,7 +189,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-room="3" data-complex="fortress" data-area="72,2">
+              <div class="apartments-item" data-room="3" data-complex="fortress" data-area="72.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -181,7 +203,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item sold" data-room="4" data-complex="castle" data-area="76,6">
+              <div class="apartments-item sold" data-room="4" data-complex="fortress" data-area="76.6">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -197,7 +219,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-room="5" data-complex="fortress" data-area="60,2">
+              <div class="apartments-item" data-room="5" data-complex="fortress" data-area="60.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -223,18 +245,18 @@
             <p>Відділ продаж</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
               <li class="info-list-item">
@@ -246,18 +268,18 @@
             <p>Офіс</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
             </ol>

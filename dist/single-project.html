@@ -17,7 +17,11 @@
   </head>
   <body>
     <header>
-      <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+      <nav
+        class="navigation container mobile-nav"
+        itemscope="itemscope"
+        itemtype="http://schema.org/SiteNavigationElement"
+      >
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
@@ -40,11 +44,14 @@
           <li class="menu-item"><a href="/projects.html" class="item-link">Наші проекти</a></li>
           <li class="menu-item"><a href="/selection.html" class="item-link">Підбір квартир</a></li>
           <li class="menu-item logo">
-            <a href="/" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+            <a href="/" class="item-link">
+              <img class="big-logo" src="./img/logo.png" alt="" />
+              <img class="small-logo" src="./img/svg/logo.svg" alt="" />
+            </a>
           </li>
           <li class="menu-item"><a href="/commercial.html" class="item-link">Комерційна нерухомість</a></li>
           <li class="menu-item small-item"><a href="/news.html" class="item-link">Новини</a></li>
-          <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
+          <li class="menu-item small-item"><a href="#" id="contacts" class="item-link">Контакти</a></li>
         </ol>
         <ol class="social-menu">
           <li class="social-menu-item">
@@ -57,14 +64,14 @@
             <a href="#"> <i class="icon icon-facebook">&#xf16a;</i> </a>
           </li>
           <li class="social-menu-item">
-            <ol class="language-list list-dropdown">
-              <li><a href="#">RU</a></li>
-              <li><a href="#">EN</a></li>
+            <ol class="language-list">
               <li><a href="#">UA</a></li>
             </ol>
           </li>
         </ol>
       </nav>
+      <button class="dots"><span></span></button>
+      <a href="/" class="mobile-link-logo"> <img src="./img/logo.png" alt="" /> </a>
     </header>
 
     <main>
@@ -512,7 +519,7 @@
                 <li class="filter-item" data-category="october">Жовтень 2018</li>
                 <li class="filter-item" data-category="september">Вересень 2018</li>
               </ul>
-              <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+              <div id="gallery" class="my-gallery" data-pswp-uid="1">
                 <a
                   href="../img/demo1.jpg"
                   data-size="1600x1068"
@@ -611,18 +618,18 @@
             <p>Відділ продаж</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
               <li class="info-list-item">
@@ -634,18 +641,18 @@
             <p>Офіс</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
             </ol>
@@ -689,9 +696,13 @@
               </div>
             </div>
 
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+              <i class="icon  icon-left-open">&#xe802;</i>
+            </button>
 
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+              <i class="icon  icon-right-open">&#xe800;</i>
+            </button>
 
             <div class="pswp__caption"><div class="pswp__caption__center"></div></div>
           </div>

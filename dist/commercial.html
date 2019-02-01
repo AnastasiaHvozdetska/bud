@@ -17,7 +17,11 @@
   </head>
   <body>
     <header>
-      <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+      <nav
+        class="navigation container mobile-nav"
+        itemscope="itemscope"
+        itemtype="http://schema.org/SiteNavigationElement"
+      >
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
@@ -40,11 +44,14 @@
           <li class="menu-item"><a href="/projects.html" class="item-link">Наші проекти</a></li>
           <li class="menu-item"><a href="/selection.html" class="item-link">Підбір квартир</a></li>
           <li class="menu-item logo">
-            <a href="/" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+            <a href="/" class="item-link">
+              <img class="big-logo" src="./img/logo.png" alt="" />
+              <img class="small-logo" src="./img/svg/logo.svg" alt="" />
+            </a>
           </li>
           <li class="menu-item"><a href="/commercial.html" class="item-link">Комерційна нерухомість</a></li>
           <li class="menu-item small-item"><a href="/news.html" class="item-link">Новини</a></li>
-          <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
+          <li class="menu-item small-item"><a href="#" id="contacts" class="item-link">Контакти</a></li>
         </ol>
         <ol class="social-menu">
           <li class="social-menu-item">
@@ -57,14 +64,14 @@
             <a href="#"> <i class="icon icon-facebook">&#xf16a;</i> </a>
           </li>
           <li class="social-menu-item">
-            <ol class="language-list list-dropdown">
-              <li><a href="#">RU</a></li>
-              <li><a href="#">EN</a></li>
+            <ol class="language-list">
               <li><a href="#">UA</a></li>
             </ol>
           </li>
         </ol>
       </nav>
+      <button class="dots"><span></span></button>
+      <a href="/" class="mobile-link-logo"> <img src="./img/logo.png" alt="" /> </a>
     </header>
 
     <main>
@@ -104,198 +111,15 @@
         <div class="top-right triangle"></div>
       </section>
 
-      <section class="project-advantages commercial">
-        <div class="container">
-          <h2 class="section-heading">Наші переваги</h2>
-          <div class="wrapper-advantages">
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sed dignissimos cumque eius non. Dicta,
-                ducimus sequi magnam eveniet harum aliquam commodi corporis delectus aliquid, vel eligendi. Nulla libero
-                suscipit, voluptatum architecto consectetur, ab ratione quod itaque veniam doloremque atque hic
-                laudantium tempore iste. Sint, optio commodi. Quia eligendi vel explicabo odio repellendus quae
-                corrupti, doloremque laboriosam eos molestias saepe hic atque nemo. Sint necessitatibus minus magnam
-                deserunt itaque perspiciatis, facere tempora distinctio vero voluptate libero reprehenderit provident
-                iusto quidem corrupti dolorum assumenda quaerat! Dolore corporis dicta ipsum alias autem. Saepe at
-                quidem optio laboriosam, repudiandae deserunt numquam facere tempore.
-              </p>
-            </div>
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sed dignissimos cumque eius non. Dicta,
-                ducimus sequi magnam eveniet harum aliquam commodi corporis delectus aliquid, vel eligendi. Nulla libero
-                suscipit, voluptatum architecto consectetur, ab ratione quod itaque veniam doloremque atque hic
-                laudantium tempore iste. Sint, optio commodi. Quia eligendi vel explicabo odio repellendus quae
-                corrupti, doloremque laboriosam eos molestias saepe hic atque nemo. Sint necessitatibus minus magnam
-                deserunt itaque perspiciatis, facere tempora distinctio vero voluptate libero reprehenderit provident
-                iusto quidem corrupti dolorum assumenda quaerat! Dolore corporis dicta ipsum alias autem. Saepe at
-                quidem optio laboriosam, repudiandae deserunt numquam facere tempore.
-              </p>
-            </div>
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sed dignissimos cumque eius non. Dicta,
-                ducimus sequi magnam eveniet harum aliquam commodi corporis delectus aliquid, vel eligendi. Nulla libero
-                suscipit, voluptatum architecto consectetur, ab ratione quod itaque veniam doloremque atque hic
-                laudantium tempore iste. Sint, optio commodi. Quia eligendi vel explicabo odio repellendus quae
-                corrupti, doloremque laboriosam eos molestias saepe hic atque nemo. Sint necessitatibus minus magnam
-                deserunt itaque perspiciatis, facere tempora distinctio vero voluptate libero reprehenderit provident
-                iusto quidem corrupti dolorum assumenda quaerat! Dolore corporis dicta ipsum alias autem. Saepe at
-                quidem optio laboriosam, repudiandae deserunt numquam facere tempore.
-              </p>
-            </div>
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sed dignissimos cumque eius non. Dicta,
-                ducimus sequi magnam eveniet harum aliquam commodi corporis delectus aliquid, vel eligendi. Nulla libero
-                suscipit, voluptatum architecto consectetur, ab ratione quod itaque veniam doloremque atque hic
-                laudantium tempore iste. Sint, optio commodi. Quia eligendi vel explicabo odio repellendus quae
-                corrupti, doloremque laboriosam eos molestias saepe hic atque nemo. Sint necessitatibus minus magnam
-                deserunt itaque perspiciatis, facere tempora distinctio vero voluptate libero reprehenderit provident
-                iusto quidem corrupti dolorum assumenda quaerat! Dolore corporis dicta ipsum alias autem. Saepe at.
-              </p>
-            </div>
-            <div class="item-advantages">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 117.62">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #ffce00;
-                    }
-                  </style>
-                </defs>
-                <title>Ресурс 5</title>
-                <g id="Шар_2" data-name="Шар 2">
-                  <g id="Про_компанію" data-name="Про компанію">
-                    <path
-                      class="cls-1"
-                      d="M116.93,55.32a1.74,1.74,0,0,0-1.89.38l-5.18,5.19V25.62a1.73,1.73,0,0,0-1.73-1.73H94.82l4.83-4.84h0l4.66-4.65a5.3,5.3,0,0,0,0-7.47L98.92,1.55a5.28,5.28,0,0,0-7.47,0L86.8,6.2l-5.63,5.63-12,12H15.35V6.75A1.72,1.72,0,0,0,13.62,5,13.64,13.64,0,0,0,0,18.64V92.2a1.58,1.58,0,0,0,0,.38A13.12,13.12,0,0,0,13.12,104.7H66.05l-10,10a1.71,1.71,0,0,0-.38,1.88,1.73,1.73,0,0,0,1.6,1.07h59a1.72,1.72,0,0,0,1.73-1.73v-59A1.73,1.73,0,0,0,116.93,55.32ZM88,9.88l8,7.95L92.8,21l-8-8ZM93.9,4a1.82,1.82,0,0,1,2.57,0l5.39,5.38a1.84,1.84,0,0,1,0,2.57l-3.44,3.43-8-8ZM61.48,114.16,79,96.66h0a1.73,1.73,0,0,0,0-2.44,1.64,1.64,0,0,0-.25-.21,1.73,1.73,0,0,0-2.2.21l-7,7H13.12a9.61,9.61,0,0,1-9.65-9.34c0-.33,0-.66.08-1h0c0-.16,0-.31.07-.46v0c0-.14.05-.27.08-.41a.36.36,0,0,0,0-.11l.09-.34c0-.06,0-.12.05-.18L4,89.1,4,88.84l.06-.18c.05-.11.09-.23.14-.34a.36.36,0,0,1,0-.09c0-.14.12-.28.18-.41v0a10.2,10.2,0,0,1,7.09-5.54h0l.44-.08h.07l.4,0h.11a2.56,2.56,0,0,1,.39,0h.12l.51,0a1.72,1.72,0,0,0,1.73-1.73V67.75a1.73,1.73,0,0,0-3.46,0V78.69a13.54,13.54,0,0,0-7.78,3.76c-.23.22-.44.45-.65.69V18.64a10.17,10.17,0,0,1,8.43-10v52.2h0a1.73,1.73,0,0,0,3.46,0h0V27.35h50.3l-9.57,9.57a1.73,1.73,0,0,0,2.45,2.45L71.06,26.84h0L82.39,15.5l8,8-.94.93h0L54.49,59.32l-8-8,6.88-6.88A1.73,1.73,0,1,0,51,42l-8.11,8.11-.12.13a.1.1,0,0,1,0,0,.36.36,0,0,1-.07.1l0,.06-.06.1,0,.07,0,.1,0,0-3.37,9.56-2.3,6.51a2.68,2.68,0,0,0-.07.27H31a1.73,1.73,0,1,0,0,3.46h48a1.73,1.73,0,1,0,0-3.46H44.5L55.06,63.4h0l.12,0,0,0,.12-.06,0,0,.12-.08,0,0a.81.81,0,0,0,.14-.12L91.35,27.35h15v37L81.62,89.13a1.71,1.71,0,0,0,0,2.44.49.49,0,0,0,.13.12,1.73,1.73,0,0,0,2.19,0,.71.71,0,0,0,.13-.12h0L114.54,61.1V76.39h-3.2a1.73,1.73,0,0,0,0,3.46h3.2v5.22h-3.2a1.73,1.73,0,1,0,0,3.46h3.2v5.22h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v5.21h-3.2a1.74,1.74,0,0,0,0,3.47h3.2v8.26ZM46.36,62.8l-3.31-3.31,1.76-5,6.51,6.52Z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <h6>Contrary to popular belief</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sed dignissimos cumque eius non. Dicta,
-                ducimus sequi magnam eveniet harum aliquam commodi corporis delectus aliquid, vel eligendi. Nulla libero
-                suscipit, voluptatum architecto consectetur, ab ratione quod itaque veniam doloremque atque hic
-                laudantium tempore iste. Sint, optio commodi. Quia eligendi vel explicabo odio repellendus quae
-                corrupti, doloremque laboriosam eos molestias saepe hic atque nemo. Sint necessitatibus minus magnam
-                deserunt itaque perspiciatis, facere tempora distinctio vero voluptate libero reprehenderit provident
-                iusto quidem corrupti dolorum assumenda quaerat! Dolore corporis dicta ipsum alias autem. Saepe at.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="selection">
         <div class="container">
           <h5 class="section-subheading">Підбір комерційної<span> нерухомості</span></h5>
           <div class="selection-wrapper">
             <div class="selection-filter">
               <h6>Параметри</h6>
-              <div class="selection-category">
+              <div class="selection-category" style="display: none">
                 <p>Кількість кімнат</p>
-                <input type="range" value="0" min="0" max="5" step="1" />
+                <input id="rooms" name="rooms-count" type="range" value="0" min="0" max="5" step="1" />
                 <ul class="range-labels">
                   <li class="active selected">All</li>
                   <li>1</li>
@@ -305,10 +129,39 @@
                   <li>5</li>
                 </ul>
               </div>
+              <div class="selection-category area">
+                <p>Площа</p>
+
+                <span>Від </span> <input id="min-area" value="" name="min-area" type="number" /> <span>До</span>
+                <input id="max-area" value="" name="max-area" type="number" /> <span>М2</span>
+
+                <!-- <input type="range" value="0" name="area" min="0" max="5" step="1"> -->
+                <div class="range-slider">
+                  <input class="range" name="min" value="" min="" max="" step="0.1" type="range" />
+                  <input class="range" name="max" value="" min="" max="" step="0.1" type="range" />
+                </div>
+
+                <ul class="range-labels">
+                  <li class="active selected">50</li>
+                  <li>55</li>
+                  <li>60</li>
+                  <li>65</li>
+                  <li>70</li>
+                </ul>
+              </div>
+              <div class="selection-category">
+                <p>Житловий комплекс</p>
+                <select id="complex">
+                  <option selected="selected" value="all">Обрати всі</option>
+                  <option value="millenium">Millenium</option>
+                  <option value="fortress">Fortress</option>
+                </select>
+                <input type="hidden" name="complex" value="all" />
+              </div>
             </div>
 
             <div class="selection-items">
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item" data-room="1" data-complex="millenium" data-area="70.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -322,7 +175,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item" data-room="1" data-complex="fortress" data-area="57.8">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -336,7 +189,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item" data-room="1" data-complex="millenium" data-area="50.1">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -350,7 +203,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item" data-room="3" data-complex="fortress" data-area="72.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -364,13 +217,15 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item sold" data-room="4" data-complex="fortress" data-area="76.6">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
                 </div>
                 <!-- <img src="../img/house5.png" alt=""> -->
-                <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+                <div class="item-body" style="background-image: url(../img/house5.png)">
+                  <div class="check-sold"><p>Продано</p></div>
+                </div>
                 <div class="item-footer">
                   <p>Житлова площа: <span>35.89</span></p>
                   <p>Нежитлова площа: <span>41.31</span></p>
@@ -378,7 +233,7 @@
                 </div>
                 <a href="#" class="apartment-link"></a>
               </div>
-              <div class="apartments-item" data-category="2">
+              <div class="apartments-item" data-room="5" data-complex="fortress" data-area="60.2">
                 <div class="item-heading">
                   <h6>1-Кімнатна</h6>
                   <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -404,18 +259,18 @@
             <p>Відділ продаж</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
               <li class="info-list-item">
@@ -427,18 +282,18 @@
             <p>Офіс</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
             </ol>

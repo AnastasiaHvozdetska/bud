@@ -4,27 +4,35 @@
   and (max-device-width: 1600px)
   and (-webkit-min-device-pixel-ratio: 1) {
     .triangle.top-left, .triangle.bottom-left  {
-      width: 80%;
+      width: 85%;
     }
     .triangle.bottom-left {
       height: 200px;
     }
     .triangle.top-right {
-      width: 20%;
+      width: 15%;
       height: 50px;
+      // height: 5%;
     }
     .triangle.bottom-right {
-      width: 20%;
-      height: 20%;
+      width: 15%;
+      height: 10%;
     }
     .about.about-company .triangle.top-right {
-      width: 20%;
+      width: 15%;
+      height: 10%;
     }
-    .header-page.large .triangle {
-      bottom: 50px;
+
+
+    .header-page.large {
+      height: 90vh;
+      .triangle {
+        bottom: 50px;
+      }
     }
+    
     .navigation .menu .menu-item {
-      padding: 5px 10px;
+      padding: 20px 10px;
       &.logo img {
         width: 100px;
       }
@@ -33,8 +41,8 @@
       padding-top: 50px;
     }
 
-    .company-slogan .left-triangle {
-      // bottom: -180px;
+    .about .left-wrapper .left-content p {
+      width: 100%;
     }
 
     .about.about-company {
@@ -42,21 +50,6 @@
       .about-left {
         grid-column-start: 1;
         grid-column-end: 10;
-        .about-left-triangle {
-          position: absolute;
-          width: 100vw;
-          height: 315px;
-          background-color: red;
-          top: 52px;
-          left: -125px;
-          transform: rotate(-30deg);
-          border-bottom: 1px solid #929292;
-          z-index: 5;
-          right: 0;
-        }
-        &::before {
-          border-width: 510px 1100px 0 0;
-        }
         &::after {
           border-width: 0 0 200px 350px;
         }
@@ -66,10 +59,8 @@
       }
     }
     .partners .partners-list {
-      grid-template-columns: repeat(9,1fr);
-      grid-gap: 30px;
-      .list-item:first-of-type {
-        grid-column: 3;
+      .list-item {
+        width: 170px;
       }
     }
     .footer-wrapper .footer-info {
@@ -94,4 +85,216 @@
     .about.about-project {
       transform: translateY(-50px);
     }
+
+    .about.about-company-page {
+      .about-left {
+        grid-column-end: 11;
+      }
+    }
+
+    .last-news.news .news-wrapper .list-item:nth-child(4n) svg {
+      height: 300px;
+    }
 }
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    min-width: auto;
+    width: calc(100% - 40px);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dots {
+      display: inline-block;
+    }
+    .mobile-link-logo {
+      display: inline-block;
+      position: relative;
+      z-index: 10;
+    }
+    &.fixed {
+      top: 0;
+    }
+  }
+
+  .navigation.mobile-nav {
+    height: 100%;
+    border: 1px solid rebeccapurple;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    min-width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // transition: $transition;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      .menu-item.logo {
+       display: none; 
+      }
+    }
+    &.active {
+      display: flex;
+    }
+  }
+
+  .navigation.mobile-nav.active {
+    display: flex;
+    left: 0;
+    
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .section-subheading {
+    bottom: 15px;
+  }
+  .mobile-link-logo {
+    width: 70px;
+    margin: 10px 20px;
+  }
+
+  button.dots {
+    margin: 10px 20px;
+  }
+
+  .navigation.mobile-nav {
+    padding-top: 70px;
+  }
+
+  .list-dropdown:after {
+    right: -12px;
+  }
+
+  .section-heading {
+    font-size: 1.7em;
+  }
+  .section-subheading {
+    font-size: 1.3em;
+  }
+
+  .triangle.bottom-left {
+    height: 150px;
+  }
+  .triangle.bottom-right {
+    height: 60px;
+  }
+
+  .triangle.top-left {
+    height: 150px;
+  }
+
+  .header-page {
+    .container {
+      height: 100%;
+    }
+    &.large {
+      .triangle {
+        bottom: 0;
+      }
+    }
+  }
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 0;
+    h1 {
+      font-size: 2em;
+    }
+    h4 {
+      font-size: 0.7em;
+    }
+    svg {
+      width: 25px;
+    }
+  }
+  .about.about-company {
+    transform: none;
+    height: auto;
+    .triangle.top-right {
+      height: 60px;
+    }
+    .about-left.left-wrapper { 
+      background-image: none;
+      h2 {
+        left: 0;
+      }
+      p {
+        width: 100%;
+      }
+      .about-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .about-right {
+      padding: 0 30px;
+      .about-achievements-list li {
+        font-size: 12px;
+        span {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .about {
+    display: block;
+    .left-wrapper {
+      padding: 0 20px;
+      grid-column-end: 12;
+    }
+  }
+
+  .our-projects .project {
+    grid-template-columns: 1fr;
+    padding-top: 30px;
+    &::after {
+      background: linear-gradient(180deg,hsla(0,0%,100%,0) 25%,rgba(0,0,0,.11));
+    }
+    &:nth-of-type(2n):after {
+      background: linear-gradient(0deg,hsla(0,0%,100%,0) 25%,rgba(0,0,0,.11));
+    }
+    &:nth-of-type(2n) {
+      .project-img, .project-description {
+        grid-column: auto;
+        padding-top: 20px;
+        h3 {
+          font-size: 1.5em;
+        }
+      }
+    }
+    .project-img, .project-description {
+      grid-column: auto;
+      padding-top: 20px;
+      h3 {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .last-news {
+    padding-top: 30px;
+  }
+
+  .last-news .news-wrapper{
+    grid-template-columns: 1fr;
+    &::after {
+      left: -20px;
+      height: 100%;
+    }
+  }
+}
+
+
+
+

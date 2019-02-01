@@ -17,7 +17,11 @@
   </head>
   <body>
     <header>
-      <nav class="navigation container" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+      <nav
+        class="navigation container mobile-nav"
+        itemscope="itemscope"
+        itemtype="http://schema.org/SiteNavigationElement"
+      >
         <ol class="phone-list list-dropdown">
           <li>
             <a itemprop="telephone" href="tel:+380505544555"
@@ -40,11 +44,14 @@
           <li class="menu-item"><a href="/projects.html" class="item-link">Наші проекти</a></li>
           <li class="menu-item"><a href="/selection.html" class="item-link">Підбір квартир</a></li>
           <li class="menu-item logo">
-            <a href="/" class="item-link"> <img src="./img/logo.png" alt="" /> </a>
+            <a href="/" class="item-link">
+              <img class="big-logo" src="./img/logo.png" alt="" />
+              <img class="small-logo" src="./img/svg/logo.svg" alt="" />
+            </a>
           </li>
           <li class="menu-item"><a href="/commercial.html" class="item-link">Комерційна нерухомість</a></li>
           <li class="menu-item small-item"><a href="/news.html" class="item-link">Новини</a></li>
-          <li class="menu-item small-item"><a href="#" class="item-link">Контакти</a></li>
+          <li class="menu-item small-item"><a href="#" id="contacts" class="item-link">Контакти</a></li>
         </ol>
         <ol class="social-menu">
           <li class="social-menu-item">
@@ -57,14 +64,14 @@
             <a href="#"> <i class="icon icon-facebook">&#xf16a;</i> </a>
           </li>
           <li class="social-menu-item">
-            <ol class="language-list list-dropdown">
-              <li><a href="#">RU</a></li>
-              <li><a href="#">EN</a></li>
+            <ol class="language-list">
               <li><a href="#">UA</a></li>
             </ol>
           </li>
         </ol>
       </nav>
+      <button class="dots"><span></span></button>
+      <a href="/" class="mobile-link-logo"> <img src="./img/logo.png" alt="" /> </a>
     </header>
 
     <main>
@@ -109,6 +116,9 @@
             <div class="project-description" itemscope itemtype="http://schema.org/Organization">
               <h3><span>Millenium</span></h3>
               <h6>Житловий комплекс</h6>
+              <p class="project-data">Дата здачі: <span>2 квартал 2019</span></p>
+              <p class="project-price">Ціна: <span>11 000 грн/м2</span></p>
+
               <p itemprop="description">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -261,18 +271,18 @@
             <p>Відділ продаж</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
               <li class="info-list-item">
@@ -284,18 +294,18 @@
             <p>Офіс</p>
             <ol class="info-list">
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xe804;</i>
                 <p>м. Івано-Франківськ, вул. Гетьмана Мазепи, 31</p>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-phone">&#xe800;</i>
+                <i class="icon icon-phone">&#xe801;</i>
                 <ol class="phone-list">
                   <li class="list-item"><a href="tel:+380680505013" itemprop="telephone">068 050 50 13</a></li>
                   <li class="list-item"><a href="tel:+380500505013" itemprop="telephone">050 050 50 13</a></li>
                 </ol>
               </li>
               <li class="info-list-item">
-                <i class="icon icon-location">&#xe802;</i>
+                <i class="icon icon-location">&#xf1d8;</i>
                 <a href="mailto:office@vsbud.com.ua" itemprop="email">office@vsbud.com.ua</a>
               </li>
             </ol>

@@ -200,22 +200,51 @@
       <div class="selection-wrapper">
         <div class="selection-filter">
           <h6>Параметри</h6>
-            <div class="selection-category">
+            <div class="selection-category" style="display: none">
               <p>Кількість кімнат</p>
-              <input type="range" value="0" min="0" max="5" step="1">
+              <input id="rooms" name="rooms-count" type="range" value="0" min="0" max="5" step="1">
               <ul class="range-labels">
-                  <li class="active selected">All</li>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5</li>
-                </ul>
+                <li class="active selected">All</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+              </ul>
+            </div>
+            <div class="selection-category area">
+              <p>Площа</p>
+
+              <span>Від </span> <input id="min-area" value="" name="min-area" type="number">
+              <span>До</span> <input id="max-area" value="" name="max-area" type="number"> <span>М2</span>
+
+              <!-- <input type="range" value="0" name="area" min="0" max="5" step="1"> -->
+              <div class="range-slider">
+                <input class='range' name='min' value="" min="" max="" step="0.1" type="range">
+                <input class='range' name='max' value="" min="" max="" step="0.1" type="range">
+              </div>
+
+              <ul class="range-labels">
+                <li class="active selected">50</li>
+                <li>55</li>
+                <li>60</li>
+                <li>65</li>
+                <li>70</li>
+              </ul>
+            </div>
+            <div class="selection-category">
+                <p>Житловий комплекс</p>
+                <select id="complex">
+                  <option selected="selected" value="all">Обрати всі</option>
+                  <option value="millenium">Millenium</option>
+                  <option value="fortress">Fortress</option>
+                </select>
+                <input type="hidden" name='complex' value="all">
             </div>
         </div>
 
         <div class="selection-items">
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item" data-room="1" data-complex='millenium' data-area='70.2'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -229,7 +258,7 @@
             </div>
             <a href="#" class="apartment-link"></a>
           </div>
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item" data-room="1" data-complex='fortress' data-area='57.8'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -243,7 +272,7 @@
             </div>
             <a href="#" class="apartment-link"></a>
           </div>
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item" data-room="1" data-complex='millenium' data-area='50.1'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -257,7 +286,7 @@
             </div>
             <a href="#" class="apartment-link"></a>
           </div>
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item" data-room="3" data-complex='fortress' data-area='72.2'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -271,13 +300,17 @@
             </div>
             <a href="#" class="apartment-link"></a>
           </div>
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item sold" data-room="4" data-complex='fortress' data-area='76.6'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
             </div>
             <!-- <img src="../img/house5.png" alt=""> -->
-            <div class="item-body" style="background-image: url(../img/house5.png)"></div>
+            <div class="item-body" style="background-image: url(../img/house5.png)">
+              <div class="check-sold">
+                <p>Продано</p>
+              </div>
+            </div>
             <div class="item-footer">
               <p>Житлова площа: <span>35.89</span></p>
               <p>Нежитлова площа: <span>41.31</span></p>
@@ -285,7 +318,7 @@
             </div>
             <a href="#" class="apartment-link"></a>
           </div>
-          <div class="apartments-item" data-category="2">
+          <div class="apartments-item" data-room="5" data-complex='fortress' data-area='60.2'>
             <div class="item-heading">
               <h6>1-Кімнатна</h6>
               <p><span>Поверх:</span> 1, 2, 3, 4, 5</p>
@@ -303,6 +336,7 @@
       </div>
     </div>
   </section>
+
 
 
   <%= _.template(require('./../includes/contacts.html'))(data) %>
