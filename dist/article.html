@@ -543,53 +543,9 @@
       <p>Designed by BlueBird</p>
     </footer>
 
-    <script src="./libs/photoswipe-ui-default.min.js"></script>
-    <script src="./libs/photoswipe.min.js"></script>
-
-    <script src="./libs/glide.min.js"></script>
     <script src="js/bundle.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-      crossorigin=""
-    ></script>
-
     <script>
-      var map = L.map("mapdiv", {
-        center: [48.918853, 24.702638],
-        zoom: 17,
-        zoomControl: false,
-        attributionControl: false
-      });
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      var LeafIcon = L.Icon.extend({
-        options: {
-          // shadowUrl: './img/map-marker-solid.svg',
-          iconSize: [38, 95],
-          shadowSize: [50, 64],
-          iconAnchor: [22, 94],
-          shadowAnchor: [4, 62],
-          popupAnchor: [-3, -76]
-        }
-      });
-
-      var greenIcon = new LeafIcon({ iconUrl: "./img/svg/map-marker-solid.svg" });
-
-      L.marker([48.918853, 24.702638], { icon: greenIcon })
-        .bindPopup("I am a green leaf.")
-        .addTo(map);
-
       var tag = document.createElement("script");
 
       tag.src = "./libs/iframe_api.js";
@@ -602,6 +558,7 @@
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
+
       function onYouTubeIframeAPIReady() {
         player = new YT.Player("player", {
           height: "360",
@@ -634,6 +591,7 @@
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
       var done = false;
+
       function onPlayerStateChange(event) {
         if (event.data === YT.PlayerState.ENDED) {
           player.playVideo();
@@ -661,6 +619,38 @@
 
       window.addEventListener("resize", vidRescale);
       window.addEventListener("load", vidRescale);
+
+      var map = L.map("mapdiv", {
+        center: [48.918853, 24.702638],
+        zoom: 17,
+        zoomControl: false,
+        attributionControl: false
+      });
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var LeafIcon = L.Icon.extend({
+        options: {
+          // shadowUrl: './img/map-marker-solid.svg',
+          iconSize: [38, 95],
+          shadowSize: [50, 64],
+          iconAnchor: [22, 94],
+          shadowAnchor: [4, 62],
+          popupAnchor: [-3, -76]
+        }
+      });
+
+      var greenIcon = new LeafIcon({
+        iconUrl: "./img/svg/map-marker-solid.svg"
+      });
+
+      L.marker([48.918853, 24.702638], {
+        icon: greenIcon
+      })
+        .bindPopup("I am a green leaf.")
+        .addTo(map);
     </script>
   </body>
 </html>

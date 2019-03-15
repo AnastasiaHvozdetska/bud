@@ -188,12 +188,11 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0.9px 0.9px 5.4px rgba(0, 0, 0, 0.43), 0px 0px 0.9px rgba(13, 13, 13, 0.43);
   border: 0px solid rgba(0, 0, 0, 0);
   height: 15px;
   width: 15px;
   border-radius: 15px;
-  background: #edc70f;
+  background: $yellow;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -5.5px;
@@ -211,7 +210,6 @@ input[type=range]::-moz-range-track {
   border: 0px solid rgba(1, 1, 1, 0);
 }
 input[type=range]::-moz-range-thumb {
-  box-shadow: 0.9px 0.9px 5.4px rgba(0, 0, 0, 0.43), 0px 0px 0.9px rgba(13, 13, 13, 0.43);
   border: 0px solid rgba(0, 0, 0, 0);
   height: 15px;
   width: 15px;
@@ -292,7 +290,7 @@ button.dots {
       &:after {
         top:-10%;
         margin-top:0px;
-        
+
       }
 
       &:before {
@@ -312,7 +310,7 @@ button.dots {
           width: 100%;
         }
 
-        &:before { 
+        &:before {
           transform:rotate(225deg);
           bottom:50%;
           margin-bottom:-2px;
